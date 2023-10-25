@@ -7,11 +7,28 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      'white': '#ffffff',
+      'purple': '#3f3cbb',
+      'midnight': '#121063',
+      'metal': '#565584',
+      'tahiti': '#3ab7bf',
+      'silver': '#ecebff',
+      'bubble-gum': '#ff77e9',
+      'bermuda': '#78dcca',
+      "main-color": "#FFC700",
+      "second-color": "#002248"
+    },
+    fontFamily: {
+      'noto': ['Noto Serif', 'serif'],
+      'montserrat': ['Montserrat', 'sans-serif'],
+    },
     extend: {
       gridTemplateColumns: {
         '24': 'repeat(24, minmax(0, 1fr))',
       }
-
     },
     screens: {
       'sm': '576px',

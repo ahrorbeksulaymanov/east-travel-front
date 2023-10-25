@@ -2,7 +2,6 @@ import Head from "next/head";
 
 const SEO = () => {
     
-
     return (
         <Head>
             <meta
@@ -28,7 +27,7 @@ const SEO = () => {
             <meta property="twitter:title" content="East tour" />
             <meta property="twitter:description" content='"East tour travel agency!' />
             <meta property="twitter:image" content="https://easttour.uz/media/cwhttgutvn20_44_02_14_12.png" />
-
+        
         </Head>
     )
 }
