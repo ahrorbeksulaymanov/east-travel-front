@@ -70,7 +70,7 @@ const PhotoGallery = () => {
                         enabled: false,
                     }}
                     loop={true}
-                    centeredSlides={768 < width ? true : false}
+                    centeredSlides={width < 768 ? false : true}
                     modules={[Pagination]}
                     className="mySwiper"
                     autoCorrect='300px'
