@@ -1,21 +1,23 @@
-import Image from "next/image";
 import BlockHeader from "../blockHeader";
 import HotelCard from "../Cards/Hotel";
+import RoadSide from '../../assets/images/roadSide.jpg';
+import konstantin from '../../assets/images/konstantin.jpg';
+import erkinpalace from '../../assets/images/erkin-palace.jpg';
 
 const PopularHotels = () => {
 
-    const data: {image: string, title: string}[] = [
+    const data: {image: any, title: string}[] = [
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5e6/b52/97d/thumb_482_1140_0_0_0_auto.jpg",
-            title: "Santorini, Oia Greece"
+            image: RoadSide,
+            title: "Roadside, Tashkent"
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5e6/b52/97d/thumb_482_1140_0_0_0_auto.jpg",
-            title: "Santorini, Oia Greece"
+            image: konstantin,
+            title: "Konstantin, Samarkand"
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5e6/b52/97d/thumb_482_1140_0_0_0_auto.jpg",
-            title: "Santorini, Oia Greece"
+            image: erkinpalace,
+            title: "Erkin Palace, Khiva"
         }
     ]
 

@@ -1,32 +1,38 @@
 import BlockHeader from "../blockHeader";
 import CityCard from "../Cards/City";
+import tashkent from '../../assets/cities/tashkent.jpg';
+import Samarkand from '../../assets/cities/sam.jpg';
+import khiva from '../../assets/cities/khiva.jpg';
+import Muynak from '../../assets/cities/moynak.jpg';
+import shahrisabz from '../../assets/cities/shahrisabz.jpg';
+import zomin from '../../assets/cities/zomin.jpg';
 
 const PerfectCities = () => {
 
-    const data: {image: string, title: string}[] = [
+    const data: {image: any, title: string}[] = [
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5eb/46f/6e1/thumb_764_600_0_0_0_auto.jpg",
-            title: "Samarqand"
+            image: tashkent,
+            title: "Tashkent"
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5eb/46f/6e1/thumb_764_600_0_0_0_auto.jpg",
-            title: "Buxoro"
+            image: Samarkand,
+            title: "Samarkand"
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5eb/46f/6e1/thumb_764_600_0_0_0_auto.jpg",
-            title: "Xorazm"
+            image: khiva,
+            title: "khiva"
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5eb/46f/6e1/thumb_764_600_0_0_0_auto.jpg",
-            title: "Buxoro"
+            image: Muynak,
+            title: "Muynak"
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5eb/46f/6e1/thumb_764_600_0_0_0_auto.jpg",
-            title: "Xorazm"
+            image: shahrisabz,
+            title: "Shakhrisabz"
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5eb/46f/6e1/thumb_764_600_0_0_0_auto.jpg",
-            title: "Samarqand"
+            image: zomin,
+            title: "Zaamin"
         },
     ]
 

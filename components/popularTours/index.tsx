@@ -1,33 +1,28 @@
-import Image from "next/image";
 import BlockHeader from "../blockHeader";
 import TourCard from "../Cards/Tour";
+import SilkRoad from '../../assets/images/silk-road.jpg';
+import AralSea from '../../assets/images/aral-sea.jpg';
+import Fergan from '../../assets/images/fergan.jpg';
+import Aydarkul from '../../assets/images/aydarkul.jpg';
 
 const PopularTours = () => {
 
-    const data: {image: string, title: string}[] = [
+    const data: {image: any, title: string}[] = [
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5eb/46f/ce0/thumb_765_600_0_0_0_auto.jpg",
-            title: "Kemer Full-Day Pirate Boat Tour with Lunch"
+            image: SilkRoad,
+            title: "Uzbekistan along the silk road"
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5eb/46f/ce0/thumb_765_600_0_0_0_auto.jpg",
-            title: "Kemer Full-Day Pirate Boat Tour with Lunch"
+            image: AralSea,
+            title: "Uzbekistan Aral sea"
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5eb/46f/ce0/thumb_765_600_0_0_0_auto.jpg",
-            title: "Kemer Full-Day Pirate Boat Tour with Lunch"
+            image: Fergan,
+            title: "Fergan valley tour"
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5eb/46f/ce0/thumb_765_600_0_0_0_auto.jpg",
-            title: "Kemer Full-Day Pirate Boat Tour with Lunch"
-        },
-        {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5eb/46f/ce0/thumb_765_600_0_0_0_auto.jpg",
-            title: "Kemer Full-Day Pirate Boat Tour with Lunch"
-        },
-        {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5eb/46f/ce0/thumb_765_600_0_0_0_auto.jpg",
-            title: "Kemer Full-Day Pirate Boat Tour with Lunch"
+            image: Aydarkul,
+            title: "Uzbekistan Aydarkul"
         },
     ]
 

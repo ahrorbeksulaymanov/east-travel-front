@@ -8,8 +8,8 @@ const HotelCard = ({item} : {item: {image: string, title: string}}) => {
 
     return(
         <div data-aos="fade-up" className="lg:col-span-4 sm:col-span-6 col-span-12">
-            <div className="bg-white rounded-[10px] hotel-card hover:translate-y-[-5px] transition">
-                <Image className="w-[100%] rounded-t-[10px]" src={item?.image} alt={item?.title} width={400} height={400} />
+            <div className="bg-white rounded-[10px] hotel-card hover:translate-y-[-5px] transition h-full">
+                <Image className="w-[100%] rounded-t-[10px] object-cover sm:h-[400px]" src={item?.image} alt={item?.title} width={400} height={400} />
                 <div className="pt-[20px] pb-[17px] px-[35px] flex justify-between items-start">
                     <div>
                         <p className="text-[24px] font-bold mb-[10px]">{item?.title}</p>
