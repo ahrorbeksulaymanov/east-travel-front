@@ -44,18 +44,18 @@ const HeaderClient = () => {
         <div className={`${scrollHeight > 150 ? "bg-white text-second-color" : "bg-transparent text-white shadow-sm"} fixed transition right-0 left-0 z-[4]`}>
             <div className="container mx-auto">
                 <header className="flex justify-between items-start">
-                    <h1 className="mt-[18px] lg:text-[30px] text-[18px]">EastTravel.uz</h1>
+                    <h1 className="mt-[15px] lg:text-[30px] text-[18px]">EastTravel.uz</h1>
                     <div className="md:flex hidden items-center md:text-[16px] text-[14px]">
-                        <a href="#" className={`${router.pathname == "/" ? "active-link" : ""} xl:mr-[48px] lg:mr-[30px] md:mr-[20px] pt-[30px] relative`}  >Home</a>
-                        <a href="#" className="xl:mr-[48px] lg:mr-[30px] md:mr-[20px] pt-[30px]">All tours</a>
-                        <a href="#" className="xl:mr-[48px] lg:mr-[30px] md:mr-[20px] pt-[30px]">Hotels</a>
-                        <a href="#" className="xl:mr-[48px] lg:mr-[30px] md:mr-[20px] pt-[30px]">Cities</a>
-                        <a href="#" className="xl:mr-[48px] lg:mr-[30px] md:mr-[20px] pt-[30px]">MICE</a>
-                        <a href="#" className="xl:mr-[48px] lg:mr-[30px] md:mr-[20px] pt-[30px]">Transport</a>
-                        <a href="#" className="xl:mr-[48px] lg:mr-[30px] md:mr-[20px] pt-[30px]">About us</a>
-                        <a href="#" className="pt-[30px]" >Contact</a>
+                        <a href="#" className={`${router.pathname == "/" ? "active-link" : ""} xl:mr-[48px] lg:mr-[30px] md:mr-[20px] pt-[25px] relative`}  >Home</a>
+                        <a href="#" className="xl:mr-[48px] lg:mr-[30px] md:mr-[20px] pt-[25px]">All tours</a>
+                        <a href="#" className="xl:mr-[48px] lg:mr-[30px] md:mr-[20px] pt-[25px]">Hotels</a>
+                        <a href="#" className="xl:mr-[48px] lg:mr-[30px] md:mr-[20px] pt-[25px]">Cities</a>
+                        <a href="#" className="xl:mr-[48px] lg:mr-[30px] md:mr-[20px] pt-[25px]">MICE</a>
+                        <a href="#" className="xl:mr-[48px] lg:mr-[30px] md:mr-[20px] pt-[25px]">Transport</a>
+                        <a href="#" className="xl:mr-[48px] lg:mr-[30px] md:mr-[20px] pt-[25px]">About us</a>
+                        <a href="#" className="pt-[25px]" >Contact</a>
                     </div>
-                    <div className="md:block hidden mt-[33px]" id="google_translate_element"> </div>
+                    {/* <div className="md:block hidden mt-[33px]" id="google_translate_element"> </div> */}
                     <div className={`md:hidden block p-3 bg-white ${scrollHeight > 150 ? "my-[10px]" : "mt-[21px]"} bg-opacity-60 rounded-full cursor-pointer`}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path className={`${scrollHeight < 150 ? "fill-white" : "fill-second-color"}`} d="M22.5 10.5H1.5C0.671578 10.5 0 11.1716 0 12C0 12.8284 0.671578 13.5 1.5 13.5H22.5C23.3284 13.5 24 12.8284 24 12C24 11.1716 23.3284 10.5 22.5 10.5Z" fill="white"/>
