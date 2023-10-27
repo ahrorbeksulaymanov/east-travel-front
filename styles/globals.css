@@ -22,6 +22,7 @@ html {
 .first-block{
   background: url(../assets/images/main-bg.png);
   background-size: cover;
+  background-position-x: center;
 }
 
 .active-link{
