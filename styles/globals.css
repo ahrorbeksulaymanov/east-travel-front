@@ -76,3 +76,27 @@ footer{
 .footer-shadow{
   background: linear-gradient(0.5turn, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
 }
+
+.hotel-card:hover{
+  box-shadow: 0px 10px 25px 0px rgba(215, 190, 190, 0.20);
+}
+
+.goog-te-gadget-simple {
+  width: 100px!important;
+  height: 50px!important;
+  overflow: auto!important;
+}
+#VIpgJd-ZVi9od-l4eHX-hSRGPd {
+  display: none !important;
+}
+.goog-te-gadget:last-child{
+  display: none !important;
+}
+
+.goog-te-combo:last-child{
+  display: none !important;
+}
+
+.skiptranslate span{
+  display: none !important;
+}

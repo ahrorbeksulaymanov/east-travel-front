@@ -26,8 +26,7 @@ const SEO = () => {
             <meta property="twitter:url" content="http://easttour.uz/" />
             <meta property="twitter:title" content="East tour" />
             <meta property="twitter:description" content='"East tour travel agency!' />
-            <meta property="twitter:image" content="https://easttour.uz/media/cwhttgutvn20_44_02_14_12.png" />
-        
+            <meta property="twitter:image" content="https://easttour.uz/media/cwhttgutvn20_44_02_14_12.png" />        
         </Head>
     )
 }

@@ -8,7 +8,7 @@ const HotelCard = ({item} : {item: {image: string, title: string}}) => {
 
     return(
         <div data-aos="fade-up" className="lg:col-span-4 sm:col-span-6 col-span-12">
-            <div className="bg-white rounded-[10px]" style={{boxShadow: "0px 10px 25px 0px rgba(215, 190, 190, 0.20)"}}>
+            <div className="bg-white rounded-[10px] hotel-card hover:translate-y-[-5px] transition">
                 <Image className="w-[100%] rounded-t-[10px]" src={item?.image} alt={item?.title} width={400} height={400} />
                 <div className="pt-[20px] pb-[17px] px-[35px] flex justify-between items-start">
                     <div>

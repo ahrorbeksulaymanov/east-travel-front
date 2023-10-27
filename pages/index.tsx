@@ -1,4 +1,5 @@
 import SEO from '@/SEO'
+import ToTopBtn from '@/components/Buttons/toTop'
 import FirstBlock from '@/components/FirstBlock'
 import AboutUsBlock from '@/components/aboutUsBlock'
 import ContactUsBlock from '@/components/contactUsBlock'
@@ -20,6 +21,7 @@ export default function Home() {
       <AboutUsBlock />
       <PhotoGallery />
       <ContactUsBlock />
+      <ToTopBtn />
       <Footer />
     </>
   )
