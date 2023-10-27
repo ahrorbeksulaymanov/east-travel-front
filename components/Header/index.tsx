@@ -24,7 +24,7 @@ const HeaderClient = () => {
             pageLanguage: 'en',
             includedLanguages : "en,ms,ta,zh-CN,uz,fr,kz", // include this for selected languages
             // @ts-ignore
-            // layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
         },
         'google_translate_element');
 
@@ -40,8 +40,8 @@ const HeaderClient = () => {
         }
     }, [typeof window])
 
-    return (
-        <div className={`${scrollHeight > 150 ? "bg-white text-second-color" : "bg-transparent text-white"} fixed transition right-0 left-0 z-[4] shadow-sm`}>
+    return ( 
+        <div className={`${scrollHeight > 150 ? "bg-white text-second-color" : "bg-transparent text-white shadow-sm"} fixed transition right-0 left-0 z-[4]`}>
             <div className="container mx-auto">
                 <header className="flex justify-between items-start">
                     <h1 className="mt-[18px] lg:text-[30px] text-[18px]">EastTravel.uz</h1>
