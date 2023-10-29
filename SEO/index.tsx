@@ -10,7 +10,7 @@ const SEO = () => {
             />
             <meta charSet="utf-8" />
             <title>East tour</title>
-            <link rel="icon" href="./favicon.svg" />
+            <link rel="icon" href="./logo-light.png" />
             <meta name='title' content={'East tour'} />
             <meta name="description" content={'East tour travel agency!'} />
             <meta name="keywords" content={'East tour, tour, East, uzbekistan tour, travel, travels, tours'} />
