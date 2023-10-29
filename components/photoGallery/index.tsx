@@ -71,7 +71,7 @@ const PhotoGallery = () => {
     ]
 
     return(
-        <div className="font-noto md:pt-[93px] pt-[34px] md:pb-[142px] pb-[100px]">
+        <div className="font-noto md:pt-[93px] pt-[34px]">
             <div className="container mx-auto">
                 <p className="text-main-color">Tour</p>
                 <h2 className="xl:text-[42px] md:text-[35px] text-[32px] text-second-color font-medium mb-[64px]">Photogallery</h2>
