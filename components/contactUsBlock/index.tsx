@@ -8,7 +8,7 @@ const ContactUsBlock = () => {
         <div className="font-noto md:pt-[180px] pt-[34px] pb-[10px]">
             <div className="container mx-auto">
                 <div className="bg-[#FFF3D0] md:py-[80px] py-[30px] md:px-[0] px-[40px] bg-opacity-20 text-center relative rounded-[20px] md:rounded-tl-[129px] rounded-tl-[80px]">
-                    <h1 className="text-[#5E6282] lg:text-[32px] md:text-[26px] sm:text-[24px] text-[20px] font-semibold mb-[60px]">Subscribe to get information, latest news and other <br /> interesting offers about GNtravel</h1>
+                    <h1 className="text-[#5E6282] lg:text-[32px] md:text-[26px] sm:text-[24px] text-[20px] font-semibold mb-[60px]">Subscribe to get information, latest news and other <br /> interesting offers about East Tour</h1>
                     <div>
                         <input className="px-[30px] md:py-[25px] py-[18px] md:w-[440px] sm:w-auto w-[100%] rounded-[10px] focus:outline-none focus:shadow-md" type="text" placeholder="Your phone number or email" />
                         <button className="text-[18px] px-[20px] md:py-[23px] sm:w-auto w-[100%] py-[18px] bg-main-color hover:bg-[#ffb700ee] rounded-[10px] text-white border-none sm:ml-[25px] sm:mt-0 mt-[25px]" >Subscribe</button>

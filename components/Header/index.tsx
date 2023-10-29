@@ -44,10 +44,10 @@ const HeaderClient = () => {
     }, [typeof window])
 
     return ( 
-        <div className={`${scrollHeight > 150 ? "bg-white text-second-color" : "bg-transparent text-white shadow-sm"} fixed transition right-0 left-0 z-[4]`}>
+        <div className={`${scrollHeight > 150 ? "bg-white text-second-color shadow-sm" : "bg-transparent text-white"} fixed transition right-0 left-0 z-[4]`}>
             <div className="container mx-auto">
                 <header className="flex justify-between items-start">
-                    <h1 className="my-[10px] lg:text-[30px] text-[18px]"><Image className="md:w-[150px] w-[100px]" src={scrollHeight > 150 ? DarkLogo : LightLogo} alt="Logo" /></h1>
+                    <Image className="md:w-[150px] w-[100px] my-[15px]" src={scrollHeight > 150 ? DarkLogo : LightLogo} alt="Logo" />
                     <div className="md:flex hidden items-center md:text-[16px] text-[14px]">
                         <a href="#" className={`${router.pathname == "/" ? "active-link" : ""} xl:mr-[48px] lg:mr-[30px] md:mr-[20px] pt-[30px] relative`}  >Home</a>
                         <a href="#" className="xl:mr-[48px] lg:mr-[30px] md:mr-[20px] pt-[30px]">All tours</a>

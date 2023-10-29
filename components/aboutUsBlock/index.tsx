@@ -29,13 +29,13 @@ const AboutUsBlock = () => {
                         <div className="grid grid-cols-12 gap-x-[13px] gap-y-[26px] w-max mt-[22px] md:mx-0 mx-auto" data-aos="fade-right" data-aos-offset="100" data-aos-duration="600">
                             <div className="col-span-6">
                                 <div className='rounded-[10px] py-[32px] w-[150px] text-center' style={{border: "2px solid #F8F8F8"}}>
-                                    <h3 className='text-main-color text-[32px] font-medium'><span className="anima-counter">10</span>M+</h3>
+                                    <h3 className='text-main-color text-[32px] font-medium'><span className="anima-counter">100</span></h3>
                                     <p className='text-second-color text-[16px] font-semibold'>Vissitors</p>
                                 </div>
                             </div>
                             <div className="col-span-6">
                                 <div className='rounded-[10px] py-[32px] w-[150px] text-center' style={{border: "2px solid #F8F8F8"}}>
-                                    <h3 className='text-main-color text-[32px] font-medium'><span className="anima-counter">109</span></h3>
+                                    <h3 className='text-main-color text-[32px] font-medium'><span className="anima-counter">15</span></h3>
                                     <p className='text-second-color text-[16px] font-semibold'>Hotels</p>
                                 </div>
                             </div>
@@ -47,7 +47,7 @@ const AboutUsBlock = () => {
                             </div>
                             <div className="col-span-6">
                                 <div className='rounded-[10px] py-[32px] w-[150px] text-center' style={{border: "2px solid #F8F8F8"}}>
-                                    <h3 className='text-main-color text-[32px] font-medium'><span className="anima-counter">18</span></h3>
+                                    <h3 className='text-main-color text-[32px] font-medium'><span className="anima-counter">25</span></h3>
                                     <p className='text-second-color text-[16px] font-semibold'>Related Spots</p>
                                 </div>
                             </div>

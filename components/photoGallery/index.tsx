@@ -3,8 +3,22 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import { Pagination } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import Image from 'next/image';
+import img1 from '../../assets/photoGallery/thumb_1116_1140_0_0_0_auto.jpg'
+import img2 from '../../assets/photoGallery/thumb_1124_1140_0_0_0_auto.jpg'
+import img3 from '../../assets/photoGallery/thumb_1216_1140_0_0_0_auto.jpg'
+import img4 from '../../assets/photoGallery/thumb_1459_1140_0_0_0_auto.jpg'
+import img5 from '../../assets/photoGallery/thumb_1458_1140_0_0_0_auto.jpg'
+import img6 from '../../assets/photoGallery/thumb_1594_1140_0_0_0_auto.jpg'
+import img7 from '../../assets/photoGallery/thumb_398_1140_0_0_0_auto.jpg'
+import img8 from '../../assets/photoGallery/thumb_399_1140_0_0_0_auto.jpg'
+import img9 from '../../assets/photoGallery/thumb_39_1140_0_0_0_auto.jpg'
+import img10 from '../../assets/photoGallery/thumb_433_1140_0_0_0_auto.jpg'
+import img11 from '../../assets/photoGallery/thumb_43_1140_0_0_0_auto.jpg'
+import img12 from '../../assets/photoGallery/thumb_448_1140_0_0_0_auto.jpg'
+import img13 from '../../assets/photoGallery/thumb_498_1140_0_0_0_auto.jpg'
+import img14 from '../../assets/photoGallery/thumb_499_1140_0_0_0_auto.jpg'
 import useWindowSize from '@/custom-hooks/useWindowSize';
 
 const PhotoGallery = () => {
@@ -13,46 +27,46 @@ const PhotoGallery = () => {
 
     const data = [
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5e6/b52/97d/thumb_482_1140_0_0_0_auto.jpg"
+            image: img1
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5e6/b52/97d/thumb_482_1140_0_0_0_auto.jpg"
+            image: img2
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5e6/b52/97d/thumb_482_1140_0_0_0_auto.jpg"
+            image: img3
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5e6/b52/97d/thumb_482_1140_0_0_0_auto.jpg"
+            image: img4
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5e6/b52/97d/thumb_482_1140_0_0_0_auto.jpg"
+            image: img5
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5e6/b52/97d/thumb_482_1140_0_0_0_auto.jpg"
+            image: img6
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5e6/b52/97d/thumb_482_1140_0_0_0_auto.jpg"
+            image: img7
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5e6/b52/97d/thumb_482_1140_0_0_0_auto.jpg"
+            image: img8
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5e6/b52/97d/thumb_482_1140_0_0_0_auto.jpg"
+            image: img9
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5e6/b52/97d/thumb_482_1140_0_0_0_auto.jpg"
+            image: img10
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5e6/b52/97d/thumb_482_1140_0_0_0_auto.jpg"
+            image: img11
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5e6/b52/97d/thumb_482_1140_0_0_0_auto.jpg"
+            image: img12
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5e6/b52/97d/thumb_482_1140_0_0_0_auto.jpg"
+            image: img13
         },
         {
-            image: "https://uzbekistan.travel/storage/app/uploads/public/5e6/b52/97d/thumb_482_1140_0_0_0_auto.jpg"
+            image: img14
         },
     ]
 
@@ -65,21 +79,22 @@ const PhotoGallery = () => {
             <Swiper
                 slidesPerView={(width > 1300) ?  6 : ( width < 1300 && 768 < width) ? 4 : 1.5}
                 spaceBetween={width > 768 ? 50 : 14}
-                pagination={{
-                    clickable: true,
-                    enabled: false,
-                }}
                 loop={true}
                 centeredSlides={width < 768 ? false : true}
-                modules={[Pagination]}
+                modules={[Autoplay]}
                 className="mySwiper"
                 autoCorrect='300px'
                 data-aos="fade-up"
+                autoplay={{
+                    delay: 5000,
+                    disableOnInteraction: false,
+                    waitForTransition: true
+                }}
             >
                 {
                     data?.map((item, index) => (
                         <SwiperSlide key={index}>
-                            <Image className={index % 2 === 0 ? "rounded-[1000px]" : "rounded-[10px]"} src={item.image} alt='gallery' width={400} height={400} />
+                            <Image className={`${index % 2 === 0 ? "rounded-[1000px]" : "rounded-[10px]"} ${width > 1600 ? "h-[450px]" : "h-[350px]"} w-[320px] h-[450px] object-cover`} src={item.image} alt='gallery' width={400} height={400} />
                         </SwiperSlide>
                     ))
                 }
