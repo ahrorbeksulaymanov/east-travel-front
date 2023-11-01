@@ -94,7 +94,7 @@ const PhotoGallery = () => {
                 {
                     data?.map((item, index) => (
                         <SwiperSlide key={index}>
-                            <Image className={`${index % 2 === 0 ? "rounded-[1000px]" : "rounded-[10px]"} ${width > 1600 ? "h-[450px]" : "h-[350px]"} w-[320px] h-[450px] object-cover`} src={item.image} alt='gallery' width={400} height={400} />
+                            <Image className={`${index % 2 === 0 ? "rounded-[1000px]" : "rounded-[10px]"} ${width > 1600 ?  "h-[450px]" : (width < 1600 && width > 1400) ? "h-[320px]" : "h-[300px]"} w-[320px] h-[450px] object-cover`} src={item.image} alt='gallery' width={400} height={400} />
                         </SwiperSlide>
                     ))
                 }

@@ -13,7 +13,7 @@ const AboutUsBlock = () => {
             duration: 100,
             style: 'fr-FR',
         }
-        initAnimaCounter(options)
+        initAnimaCounter(options)        
     }, [])
 
     return (

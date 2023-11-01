@@ -1,6 +1,8 @@
 import BlockHeader from "../blockHeader";
 import TourCard from "../Cards/Tour";
-import SilkRoad from '../../assets/images/silk-road.jpg';
+// import SilkRoad from '../../assets/images/silk-road.jpg';
+import SilkRoad from '../../assets/images/silk-road2.jpg';
+
 import AralSea from '../../assets/images/aral-sea.jpg';
 import Fergan from '../../assets/images/fergan.jpg';
 import Aydarkul from '../../assets/images/aydarkul.jpg';
