@@ -36,9 +36,8 @@ export const getLanguageConfig = (): LanguageConfig | undefined => {
   return cfg;
 };
 
-export const useLanguageSwitcher = ({
-  context,
-}: UseLanguageSwitcherOptions = {}): UseLanguageSwitcherResult => {
+export const useLanguageSwitcher = ({ context }: UseLanguageSwitcherOptions = {}): UseLanguageSwitcherResult => {
+    
   const [currentLanguage, setCurrentLanguage] = useState<string>("");
 
   useEffect(() => {

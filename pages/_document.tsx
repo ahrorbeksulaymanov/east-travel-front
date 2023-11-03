@@ -23,12 +23,12 @@ export default function Document() {
           src="/assets/scripts/translation.js"
           strategy="beforeInteractive"
         />
-        {process.env.GOOGLE_TRANSLATION_CONFIG && (
-          <Script
-            src="//translate.google.com/translate_a/element.js?cb=TranslateInit"
-            strategy="afterInteractive"
-          />
-        )}
+        <Script
+          src="//translate.google.com/translate_a/element.js?cb=TranslateInit"
+          strategy="afterInteractive"
+        />
+        {/* {process.env.GOOGLE_TRANSLATION_CONFIG && (
+        )} */}
 
 
       </Head>

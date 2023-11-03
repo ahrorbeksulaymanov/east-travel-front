@@ -1,8 +1,5 @@
 import useLanguageSwitcher, { LanguageDescriptor } from "@/custom-hooks/useLanguageSwitcher";
 import { NextPageContext } from "next";
-// import useLanguageSwitcher, {
-//   LanguageDescriptor,
-// } from "@/hooks/useLanguageSwitcher";
 import React from "react";
 
 export type LanguageSwitcherProps = {
@@ -10,8 +7,8 @@ export type LanguageSwitcherProps = {
 };
 
 export const LanguageSwitcher = ({ context }: LanguageSwitcherProps = {}) => {
-  const { currentLanguage, switchLanguage, languageConfig } =
-    useLanguageSwitcher({ context });
+
+  const { currentLanguage, switchLanguage, languageConfig } = useLanguageSwitcher({ context });
 
   if (!languageConfig) {
     return null;
@@ -19,6 +16,7 @@ export const LanguageSwitcher = ({ context }: LanguageSwitcherProps = {}) => {
 
   return (
     <div className="text-center notranslate">
+        asddsa <h1></h1>
       {languageConfig.languages.map((ld: LanguageDescriptor, i: number) => (
         <React.Fragment key={`l_s_${ld}`}>
           {currentLanguage === ld.name ||
