@@ -87,10 +87,10 @@ footer{
   width: 100px!important;
   height: 50px!important;
   overflow: auto!important;
-}
-#VIpgJd-ZVi9od-l4eHX-hSRGPd {
+} */
+/* #VIpgJd-ZVi9od-l4eHX-hSRGPd {
   display: none !important;
-}
+} */
 .goog-te-gadget:last-child{
   display: none !important;
 }
@@ -100,5 +100,9 @@ footer{
 }
 
 .skiptranslate span{
+  display: none !important;
+}
+/* 
+.skiptranslate{
   display: none !important;
 } */
