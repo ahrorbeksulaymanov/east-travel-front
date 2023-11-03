@@ -102,7 +102,25 @@ footer{
 .skiptranslate span{
   display: none !important;
 }
-/* 
-.skiptranslate{
-  display: none !important;
-} */
+
+
+header select{
+  outline: none;
+  background-color: transparent !important;
+  color: white !important;
+}
+
+header select:focus-visible{
+  outline: none !important;
+}
+
+header option{
+  background-color: white !important;
+  color: rgb(0, 0, 0) !important;
+}
+
+.language-select select{
+  background-color: white !important;
+  color: #000 !important;
+
+}
