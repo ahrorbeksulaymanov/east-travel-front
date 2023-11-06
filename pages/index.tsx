@@ -1,3 +1,4 @@
+import SEO from '@/SEO'
 import ToTopBtn from '@/components/Buttons/toTop'
 import FirstBlock from '@/components/FirstBlock'
 import Layout from '@/components/Layouts'
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <Layout>
       <>
+        <SEO />
         <FirstBlock />
         <PopularTours />
         <PopularHotels />
