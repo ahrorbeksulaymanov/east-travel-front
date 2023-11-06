@@ -91,13 +91,14 @@ footer{
 /* #VIpgJd-ZVi9od-l4eHX-hSRGPd {
   display: none !important;
 } */
-.goog-te-gadget:last-child{
+
+/* .goog-te-gadget:last-child{
   display: none !important;
 }
 
 .goog-te-combo:last-child{
   display: none !important;
-}
+} */
 
 .skiptranslate span{
   display: none !important;
