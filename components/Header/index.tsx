@@ -30,7 +30,7 @@ const HeaderClient = () => {
             // @ts-ignore
             window.googleTranslateElementInit = googleTranslateElementInit;
         }
-    }, [typeof window])
+    }, [typeof window, window])
 
     return ( 
         <div className={`${scrollHeight > 150 ? "bg-white text-second-color shadow-sm" : "bg-transparent text-white"} fixed transition right-0 left-0 top-0 z-[4]`}>
