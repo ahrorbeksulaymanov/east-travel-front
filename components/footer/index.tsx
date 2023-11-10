@@ -38,12 +38,12 @@ const Footer = () => {
                         <div className="flex">
                             <svg className="cursor-pointer hover:translate-y-[-3px] transition" xmlns="http://www.w3.org/2000/svg" width="61" height="61" viewBox="0 0 61 61" fill="none">
                                 <g filter="url(#filter0_d_163_1023)">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M30.5 49C41.8218 49 51 39.8218 51 28.5C51 17.1782 41.8218 8 30.5 8C19.1782 8 10 17.1782 10 28.5C10 39.8218 19.1782 49 30.5 49Z" fill="white"/>
+                                    <path fillRule="evenodd" clipRule="evenodd" d="M30.5 49C41.8218 49 51 39.8218 51 28.5C51 17.1782 41.8218 8 30.5 8C19.1782 8 10 17.1782 10 28.5C10 39.8218 19.1782 49 30.5 49Z" fill="white"/>
                                 </g>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M33.1084 26.2445C32.7883 26.1432 32.4202 26.0757 32.0842 26.0757C31.6681 26.0757 30.7719 26.3626 30.7719 26.9195V28.2527H32.9003V30.4971H30.7719V36.6905H28.6275V30.4971H27.5713V28.2527H28.6275V27.122C28.6275 25.4176 29.3636 24 31.14 24C31.7481 24 32.8363 24.0338 33.4284 24.2531L33.1084 26.2445Z" fill="#080809"/>
+                                <path fillRule="evenodd" clipRule="evenodd" d="M33.1084 26.2445C32.7883 26.1432 32.4202 26.0757 32.0842 26.0757C31.6681 26.0757 30.7719 26.3626 30.7719 26.9195V28.2527H32.9003V30.4971H30.7719V36.6905H28.6275V30.4971H27.5713V28.2527H28.6275V27.122C28.6275 25.4176 29.3636 24 31.14 24C31.7481 24 32.8363 24.0338 33.4284 24.2531L33.1084 26.2445Z" fill="#080809"/>
                                 <defs>
-                                    <filter id="filter0_d_163_1023" x="0" y="0" width="61" height="61" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <filter id="filter0_d_163_1023" x="0" y="0" width="61" height="61" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                                    <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
                                     <feOffset dy="2"/>
                                     <feGaussianBlur stdDeviation="5"/>
@@ -57,11 +57,11 @@ const Footer = () => {
                             <div className="relative cursor-pointer hover:translate-y-[-3px] transition">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="61" height="61" viewBox="0 0 61 61" fill="none">
                                     <g filter="url(#filter0_d_163_1021)">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M30.5 49C41.8218 49 51 39.8218 51 28.5C51 17.1782 41.8218 8 30.5 8C19.1782 8 10 17.1782 10 28.5C10 39.8218 19.1782 49 30.5 49Z" fill="white"/>
+                                        <path fillRule="evenodd" clipRule="evenodd" d="M30.5 49C41.8218 49 51 39.8218 51 28.5C51 17.1782 41.8218 8 30.5 8C19.1782 8 10 17.1782 10 28.5C10 39.8218 19.1782 49 30.5 49Z" fill="white"/>
                                     </g>
                                     <defs>
-                                        <filter id="filter0_d_163_1021" x="0" y="0" width="61" height="61" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                        <filter id="filter0_d_163_1021" x="0" y="0" width="61" height="61" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
                                         <feOffset dy="2"/>
                                         <feGaussianBlur stdDeviation="5"/>
@@ -78,7 +78,7 @@ const Footer = () => {
                         </div>
                         <div className="flex mb-[18px] mt-[32px]">
                             <svg className="mr-[16px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <g clip-path="url(#clip0_163_988)">
+                                <g clipPath="url(#clip0_163_988)">
                                     <path d="M18.5252 18.5583L19.3418 17.625C20.1918 16.775 20.2335 15.3333 19.3002 14.4167L17.2585 12.8583C16.3835 11.9833 14.9585 11.9833 14.0918 12.8583L12.8168 14.1C9.65016 12.75 7.15016 10.2583 5.90016 7.19166L7.14183 5.91666C7.56683 5.49166 7.80016 4.93333 7.80016 4.33333C7.80016 3.73333 7.56683 3.175 7.17516 2.79166L5.54183 0.674996C4.66683 -0.200004 3.24183 -0.200004 2.39183 0.658329L1.41683 1.50833C0.500164 2.425 -0.00817108 3.65833 -0.00817108 5C-0.00817108 11.4583 8.5585 20.0167 15.0085 20.0167C16.3418 20.0167 17.5835 19.5083 18.5168 18.575L18.5252 18.5583ZM0.833496 4.98333C0.833496 3.86666 1.25016 2.84166 1.99183 2.1L2.97516 1.25C3.52516 0.699996 4.41683 0.699996 4.9335 1.20833L6.56683 3.325C6.8335 3.59166 6.9835 3.94166 6.9835 4.325C6.9835 4.70833 6.8335 5.05833 6.56683 5.325L5.12516 6.8C5.0085 6.91666 4.97516 7.08333 5.0335 7.24166C6.3585 10.7167 9.18349 13.5417 12.7668 14.9833C12.9168 15.0417 13.0918 15.0083 13.2168 14.8917L14.6918 13.45C15.2418 12.9 16.1335 12.9 16.7252 13.4833L18.7668 15.0417C19.3168 15.5917 19.3168 16.4833 18.7502 17.0583L17.9335 17.9917C17.1752 18.75 16.1502 19.1667 15.0335 19.1667C9.06683 19.1667 0.850163 10.95 0.850163 4.98333H0.833496Z" fill="#5E6282"/>
                                 </g>
                                 <defs>
@@ -91,7 +91,7 @@ const Footer = () => {
                         </div>
                         <div className="flex">
                             <svg className="mr-[16px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <g clip-path="url(#clip0_163_992)">
+                                <g clipPath="url(#clip0_163_992)">
                                     <path d="M20 7.91667V16.25C20 18.3167 18.3167 20 16.25 20H3.75C1.68333 20 0 18.3167 0 16.25V6.25C0 4.18333 1.68333 2.5 3.75 2.5H11.25C11.4833 2.5 11.6667 2.68333 11.6667 2.91667C11.6667 3.15 11.4833 3.33333 11.25 3.33333H3.75C2.40833 3.33333 1.275 4.24167 0.933333 5.475L7.93333 12.475C9.06667 13.6167 10.9167 13.6083 12.0583 12.475L15.95 8.45833C16.1083 8.29167 16.375 8.29167 16.5417 8.45C16.7083 8.60833 16.7083 8.875 16.55 9.04167L12.6583 13.0667C11.925 13.8 10.9583 14.1667 10 14.1667C9.04167 14.1667 8.08333 13.8 7.35 13.0667L0.833333 6.55V16.25C0.833333 17.8583 2.14167 19.1667 3.75 19.1667H16.25C17.8583 19.1667 19.1667 17.8583 19.1667 16.25V7.91667C19.1667 7.68333 19.35 7.5 19.5833 7.5C19.8167 7.5 20 7.68333 20 7.91667ZM13.3333 3.33333C13.3333 1.49167 14.825 0 16.6667 0C18.5083 0 20 1.49167 20 3.33333C20 5.175 18.5083 6.66667 16.6667 6.66667C14.825 6.66667 13.3333 5.175 13.3333 3.33333ZM14.1667 3.33333C14.1667 4.70833 15.2917 5.83333 16.6667 5.83333C18.0417 5.83333 19.1667 4.70833 19.1667 3.33333C19.1667 1.95833 18.0417 0.833333 16.6667 0.833333C15.2917 0.833333 14.1667 1.95833 14.1667 3.33333Z" fill="#5E6282"/>
                                 </g>
                                 <defs>

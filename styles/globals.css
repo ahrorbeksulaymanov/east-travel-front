@@ -92,13 +92,13 @@ footer{
   display: none !important;
 } */
 
-/* .goog-te-gadget:last-child{
+.goog-te-gadget:last-child{
   display: none !important;
 }
 
 .goog-te-combo:last-child{
   display: none !important;
-} */
+}
 
 .skiptranslate span{
   display: none !important;
@@ -124,4 +124,78 @@ header option{
   background-color: white !important;
   color: #000 !important;
 
+}
+
+.slider-button{
+  border: 2px solid #FFC700;
+  border-radius: 100px
+};
+.slider-button:hover path{
+  fill: #FFC700 !important;
+}
+.slider-button path{
+  fill: #FFC700;
+}
+
+.bg-dotted{
+  background-image: url(../assets/images/dotted-bg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+ /* slider */
+
+.employees-slider .swiper-pagination{
+  text-align: left !important;
+}
+
+.employees-slider .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #E0F1FF !important;
+  opacity: 1 !important;
+}
+
+.employees-slider .swiper-pagination-bullet-active {
+  width: 50px !important;
+  height: 12px;
+  border-radius: 10px !important;
+  background: #FFC700 !important;
+}
+
+
+.all-tours-bg{
+  background: url(../assets/images/about-bg.png);
+  background-position: center;
+}
+
+.cities-bg{
+  background: url(../assets/images/bg2.png);
+  background-position: center;
+}
+
+.mice-bg{
+  background: url(../assets/images/mice-bg.png);
+  background-position: center;
+}
+
+.about-bg{
+  background: url(../assets/images/about-bg.png);
+  background-position: center;
+}
+
+.contact-bg{
+  background: url(../assets/images/contact-bg.png);
+  background-position: center;
+}
+
+.contact-form input::placeholder, textarea::placeholder{
+  text-decoration: underline;
+}
+
+.contact-form input:focus-visible, textarea:focus-visible{
+  outline: none;
+  border-color: #FFB800 !important;
 }

@@ -33,7 +33,7 @@ const PopularTours = () => {
                     title="Tour"
                     tag={<h2 className="xl:text-[42px] md:text-[35px] text-[32px] text-second-color font-medium"> Popular <span className="text-main-color">Tours</span> on Uzbekistan </h2>}
                     desc="Travel is my life. Since 1999, I’ve been traveling around the world nonstop. If you also love travel, you’re in the right place!"
-                    btlUrl='view-all'
+                    btlUrl='all-tours'
                     btnTitle="Discover More"
                     tagMobile={<h2 className="text-[32px] text-center">Popular <span className="text-main-color">Tours</span></h2>}
                 />

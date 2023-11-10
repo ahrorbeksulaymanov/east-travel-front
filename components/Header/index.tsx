@@ -15,7 +15,7 @@ const HeaderClient = () => {
         // @ts-ignore
         new window.google.translate.TranslateElement({
             pageLanguage: 'en',
-            includedLanguages : "en,fr,de,es,ru", // include this for selected languages
+            includedLanguages : "en,fr,de,es,ru,zh-CN", // include this for selected languages
             // @ts-ignore
             // layout: google.translate.TranslateElement.InlineLayout.SIMPLE
         },
