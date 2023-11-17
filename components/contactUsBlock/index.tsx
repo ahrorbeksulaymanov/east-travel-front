@@ -22,7 +22,7 @@ const ContactUsBlock = () => {
                         <path d="M27.5995 44.4084L38.842 37.9175C39.3597 37.6186 39.5366 36.957 39.238 36.4398L27.2972 43.3338L27.5995 44.4084Z" fill="#FFB800"/>
                     </svg>
                     <Image className='opacity-10 z-[-1] absolute top-0 right-0 w-[20%]' src={Circle1} alt='Circle 1' />
-                    <Image className='opacity-10 z-[-1] absolute bottom-0 left-0 w-[30%]' src={Circle2} alt='Circle 2' />
+                    <Image className='opacity-10 z-[-1] absolute bottom-0 left-0 w-[20%]' src={Circle2} alt='Circle 2' />
                 </div>
             </div>
         </div>

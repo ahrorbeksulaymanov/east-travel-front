@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 
 import "aos/dist/aos.css";
+import Layout from '@/components/Layouts';
 
 export default function App({ Component, pageProps }: AppProps) {
 
@@ -16,5 +17,9 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
 
-  return <Component {...pageProps} />
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  )
 }

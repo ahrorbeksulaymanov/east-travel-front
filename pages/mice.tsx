@@ -7,13 +7,11 @@ import MiceFirst from '@/components/Mice/firstBlock'
 export default function Cities () {
   
   return (
-    <Layout>
       <>
         <SEO />
         <MiceFirst />
         <AllMice />
         <ToTopBtn />
       </>
-    </Layout>
   )
 }

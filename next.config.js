@@ -9,6 +9,12 @@ const nextConfig = {
         port: '',
         // pathname: '/account123/**',
       },
+      {
+        protocol: 'http',
+        hostname: '86.106.181.30',
+        port: '8888',
+        pathname: '/api/file/**',
+      },
     ],
   },
 

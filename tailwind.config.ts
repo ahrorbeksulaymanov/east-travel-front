@@ -24,6 +24,7 @@ const config: Config = {
     fontFamily: {
       'noto': ['Noto Serif', 'serif'],
       'montserrat': ['Montserrat', 'sans-serif'],
+      'public-sans': ['Public Sans', 'sans-serif'],
     },
     extend: {
       gridTemplateColumns: {
@@ -47,5 +48,8 @@ const config: Config = {
   },
 
   plugins: [],
+  // corePlugins: {
+  //   preflight: false // <== disable this!
+  // },
 }
 export default config
