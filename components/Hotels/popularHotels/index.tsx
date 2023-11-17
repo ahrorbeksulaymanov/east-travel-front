@@ -1,10 +1,13 @@
-import BlockHeader from "../blockHeader";
-import HotelCard from "../Cards/Hotel";
-import RoadSide from '../../assets/images/roadSide.jpg';
-import konstantin from '../../assets/images/konstantin.jpg';
-import erkinpalace from '../../assets/images/erkin-palace.jpg';
+import BlockHeader from "../../blockHeader";
+import HotelCard from "../../Cards/Hotel";
+import RoadSide from '../../../assets/images/roadSide.jpg';
+import konstantin from '../../../assets/images/konstantin.jpg';
+import erkinpalace from '../../../assets/images/erkin-palace.jpg';
+import { useRouter } from "next/router";
 
 const PopularHotels = () => {
+
+    const router = useRouter();
 
     const data: {image: any, title: string}[] = [
         {
@@ -13,7 +16,7 @@ const PopularHotels = () => {
         },
         {
             image: konstantin,
-            title: "Konstantin, Samarkand"
+            title: "Konstantin, Samarkand" 
         },
         {
             image: erkinpalace,
@@ -25,10 +28,10 @@ const PopularHotels = () => {
         <div className="font-noto md:pt-[93px] pt-[34px] md:pb-[142px] pb-[100px]">
             <div className="container mx-auto">
                 <BlockHeader 
-                    title="Tour"
+                    title="Hotel"
                     tag={<h2 className="xl:text-[42px] md:text-[35px] text-[32px] text-second-color"> Plan your perfect hotels <span className="text-main-color">hotels</span></h2>}
                     desc="Travel is my life. Since 1999, I’ve been traveling around the world nonstop. If you also love travel, you’re in the right place!"
-                    btlUrl='view-all'
+                    btlUrl='hotels'
                     btnTitle="View All Places"
                     tagMobile={<h2 className="text-[32px] text-center">Plan your perfect <span className="text-main-color">hotels</span></h2>}
                 />
@@ -40,7 +43,7 @@ const PopularHotels = () => {
                     }
                 </div>
                 <div className="text-center">
-                    <button className="md:hidden inline-block text-[18px] px-[20px] py-[16px] mt-[24px] bg-main-color rounded-[4px] text-white border-none block-header-btn" >{'Discover More'}</button>
+                    <button onClick={() => router.push('hotels')} className="md:hidden inline-block text-[18px] px-[20px] py-[16px] mt-[24px] bg-main-color rounded-[4px] text-white border-none block-header-btn" >{'Discover More'}</button>
                 </div>
             </div>
         </div>

@@ -1,4 +1,3 @@
-import TourCard from "../Cards/Tour";
 import CityCard from "../Cards/City";
 import tashkent from '../../assets/cities/tashkent.jpg';
 import Samarkand from '../../assets/cities/sam.jpg';

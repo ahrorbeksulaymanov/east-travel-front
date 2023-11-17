@@ -3,10 +3,10 @@ import ToTopBtn from '@/components/Buttons/toTop'
 import FirstBlock from '@/components/FirstBlock'
 import AboutUsBlock from '@/components/aboutUsBlock'
 import ContactUsBlock from '@/components/contactUsBlock'
-import PerfectCities from '@/components/perfectCities'
+import PerfectCities from '@/components/Cities/perfectCities'
 import PhotoGallery from '@/components/photoGallery'
-import PopularHotels from '@/components/popularHotels'
-import PopularTours from '@/components/popularTours'
+import PopularHotels from '@/components/Hotels/popularHotels'
+import PopularTours from '@/components/AllTours/popularTours'
 import { BASE_URL } from '@/congif/constans'
 
 

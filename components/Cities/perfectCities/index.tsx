@@ -1,11 +1,11 @@
-import BlockHeader from "../blockHeader";
-import CityCard from "../Cards/City";
-import tashkent from '../../assets/cities/tashkent.jpg';
-import Samarkand from '../../assets/cities/sam.jpg';
-import khiva from '../../assets/cities/khiva.jpg';
-import Muynak from '../../assets/cities/moynak.jpg';
-import shahrisabz from '../../assets/cities/shahrisabz.jpg';
-import zomin from '../../assets/cities/zomin.jpg';
+import BlockHeader from "../../blockHeader";
+import CityCard from "../../Cards/City";
+import tashkent from '../../../assets/cities/tashkent.jpg';
+import Samarkand from '../../../assets/cities/sam.jpg';
+import khiva from '../../../assets/cities/khiva.jpg';
+import Muynak from '../../../assets/cities/moynak.jpg';
+import shahrisabz from '../../../assets/cities/shahrisabz.jpg';
+import zomin from '../../../assets/cities/zomin.jpg';
 
 const PerfectCities = () => {
 
@@ -43,7 +43,7 @@ const PerfectCities = () => {
                     title="Location"
                     tag={<h2 className="xl:text-[42px] md:text-[35px] text-[32px] text-second-color font-medium"> Plan your perfect <span className="text-main-color">Cities</span></h2>}
                     desc="Travel is my life. Since 1999, I’ve been traveling around the world nonstop. If you also love travel, you’re in the right place!"
-                    btlUrl='view-all'
+                    btlUrl='cities'
                     btnTitle="Discover More"
                     tagMobile={<h2 className="text-[32px] text-center">Plan your perfect <span className="text-main-color">Cities </span></h2>}
                 />

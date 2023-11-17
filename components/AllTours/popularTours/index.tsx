@@ -1,5 +1,5 @@
-import BlockHeader from "../blockHeader";
-import TourCards from "../AllTours/tour-cards";
+import BlockHeader from "../../blockHeader";
+import TourCards from "../tour-cards";
 import { useRouter } from "next/router";
 
 const PopularTours = ({data} : {data: any}) => {
