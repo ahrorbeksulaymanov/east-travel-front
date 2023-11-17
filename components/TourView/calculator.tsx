@@ -4,7 +4,7 @@ import {message} from 'antd'
 
 const PaymentModal = dynamic(() => import('@/components/TourView/payment/modal'), { ssr: false })
 
-const TourCalculator = ({data}: {data: any}) => {
+const TourCalculator = ({data, selectedDate}: {data: any, selectedDate:string | undefined}) => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [peopleCount, setpeopleCount] = useState<{[name: number]: number}>({} as {[name: number]: number});
@@ -16,7 +16,7 @@ const TourCalculator = ({data}: {data: any}) => {
     }
     return (
         <div className="container mx-auto font-public-sans text-[#4B465C] mb-5 mt-[50px]">
-            <PaymentModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} data={data} peopleCount={peopleCount} />
+            <PaymentModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} data={data} peopleCount={peopleCount} selectedDate={selectedDate} />
             <div className="grid grid-cols-12 gap-[30px]">
                 <div className="md:col-span-8 col-span-12">
                     {
@@ -47,7 +47,7 @@ const TourCalculator = ({data}: {data: any}) => {
                         }
                         <div className="flex justify-between mb-5">
                             <span className="font-normal">Date</span>
-                            <span className="font-normal opacity-60">Fri, 24 November 2023 07:30 AM</span>
+                            <span className="font-normal opacity-60">{selectedDate ? selectedDate : "Select date"}</span>
                         </div>
                         <div className="flex justify-between mb-5 mt-10">
                             <span className="font-normal">Total</span>

@@ -6,11 +6,12 @@ import TourViewFirst from "@/components/TourView/firstBlock";
 import TourViewSlider from "@/components/TourView/slider";
 import TourTab from "@/components/TourView/tabs";
 import { BASE_URL } from "@/congif/constans";
+import { useState } from "react";
 
 export async function getStaticProps(context: any) {
 
     const response = await fetch(
-      `${BASE_URL}/tours/${context.params.tour_id}`
+      `${BASE_URL}/tours/get-one?slug=${context.params.tour_id}`
     )
     const post = await response.json()
     return {
@@ -29,7 +30,9 @@ export async function getStaticProps(context: any) {
   }
   
 
-export default function TourView(params: any) {    
+export default function TourView(params: any) {
+
+  const [selectedDate, setselectedDate] = useState<string>()
     
     return (
         <>
@@ -37,8 +40,8 @@ export default function TourView(params: any) {
             <TourViewFirst title={params?.data?.title} />
             <TourViewSlider data={params?.data} />
             <TourTab data={params?.data} />
-            <TourCalendar data={params?.data} />
-            <TourCalculator data={params?.data} />
+            <TourCalendar data={params?.data} setselectedDate={setselectedDate} />
+            <TourCalculator data={params?.data} selectedDate={selectedDate} />
             <ToTopBtn />
         </>
     )

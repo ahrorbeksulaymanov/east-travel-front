@@ -1,18 +1,13 @@
-import type { Dayjs } from 'dayjs';
 import { Calendar } from 'antd';
-import type { CalendarProps } from 'antd';
 import dayjs from 'dayjs'
+import { Dispatch } from 'react';
 
-const TourCalendar = ({data}: {data: any}) => {
+const TourCalendar = ({data, setselectedDate}: {data: any, setselectedDate: Dispatch<string>}) => {
     
-    const onPanelChange = (value: Dayjs, mode: CalendarProps<Dayjs>['mode']) => {
-        console.log(value.format('YYYY-MM-DD'), mode);
-      };
-
     return (
         <div className='container mx-auto tour-calendar font-public-sans mt-[100px]'>
             <h1 className='font-noto text-[56px] font-medium'>Booking Summary</h1>
-            <Calendar onPanelChange={onPanelChange} validRange={[dayjs("2023-11-15"), dayjs("2023-11-25")]}/>
+            <Calendar onChange={(e) => setselectedDate(e.format('DD-MM-YYYY'))} validRange={[dayjs(data?.startDate), dayjs(data?.endDate)]}/>
         </div>
     )
 }

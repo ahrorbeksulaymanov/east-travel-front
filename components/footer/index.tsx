@@ -100,7 +100,7 @@ const Footer = () => {
                                     </clipPath>
                                 </defs>
                             </svg>
-                            <a href="mailto:ahrorsulaymanov2@gamil.com" className="text-[18px] inline-block font-medium hover:underline">ahrorsulaymanov2@gamil.com</a><br />
+                            <a href="mailto:info@easttour.com" className="text-[18px] inline-block font-medium hover:underline">info@easttour.com</a><br />
                         </div>
                     </div>
                 </div>

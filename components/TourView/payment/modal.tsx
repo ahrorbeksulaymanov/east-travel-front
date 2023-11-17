@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import { Dispatch } from 'react';
 
-const PaymentModal =  ({isModalOpen, setIsModalOpen, data, peopleCount}: {isModalOpen: boolean, setIsModalOpen: Dispatch<boolean>, data: any, peopleCount:{[name: number]: number}}) => {
+const PaymentModal =  ({isModalOpen, setIsModalOpen, data, peopleCount, selectedDate}: {isModalOpen: boolean, setIsModalOpen: Dispatch<boolean>, data: any, peopleCount:{[name: number]: number}, selectedDate: string | undefined}) => {
     
     const router = useRouter()  
     const { tour_id } = router.query;
@@ -103,7 +103,7 @@ const PaymentModal =  ({isModalOpen, setIsModalOpen, data, peopleCount}: {isModa
                         }
                         <div className="flex justify-between mb-5">
                             <span className="font-normal">Date</span>
-                            <span className="font-normal opacity-60">Fri, 24 November 2023 07:30 AM</span>
+                            <span className="font-normal opacity-60">{selectedDate ? selectedDate : "Date is not selected"}</span>
                         </div>
                         <div className="flex justify-between mb-5 mt-10">
                             <span className="font-normal">Total</span>

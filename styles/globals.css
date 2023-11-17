@@ -169,26 +169,39 @@ header option{
 .all-tours-bg{
   background: url(../assets/images/tour-bg.png);
   background-position: center;
+  background-size: cover;
 }
 
 .cities-bg{
   background: url(../assets/images/bg2.png);
   background-position: center;
+  background-size: cover;
 }
 
 .mice-bg{
   background: url(../assets/images/mice-bg.png);
   background-position: center;
+  background-size: cover;
 }
 
 .about-bg{
   background: url(../assets/images/about-bg.png);
   background-position: center;
+  background-size: cover;
 }
 
 .contact-bg{
   background: url(../assets/images/contact-bg.png);
   background-position: center;
+  background-size: cover;
+}
+
+.hotel-bg{
+  background: url(../assets/images/contact-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 .contact-form input::placeholder, textarea::placeholder{
