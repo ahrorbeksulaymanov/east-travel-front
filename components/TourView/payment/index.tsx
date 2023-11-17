@@ -58,7 +58,7 @@ const PaymentComponent = () => {
                     if (error) {
                         console.error(error);
                     } else {
-                        await axios.post(`${BASE_URL}/payment/checkout?nonce=${payload.nonce}&bookingId${booking_id}`);
+                        await axios.post(`${BASE_URL}/payment/checkout?nonce=${payload.nonce}&bookingId=${booking_id}`);
                     }
                 });
         }

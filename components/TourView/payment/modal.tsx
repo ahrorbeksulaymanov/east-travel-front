@@ -7,7 +7,6 @@ import { Dispatch } from 'react';
 const PaymentModal =  ({isModalOpen, setIsModalOpen, data, peopleCount, selectedDate}: {isModalOpen: boolean, setIsModalOpen: Dispatch<boolean>, data: any, peopleCount:{[name: number]: number}, selectedDate: string | undefined}) => {
     
     const router = useRouter()  
-    const { tour_id } = router.query;
     
     const submitData = async (event: any) => {
         event.preventDefault();
@@ -18,7 +17,7 @@ const PaymentModal =  ({isModalOpen, setIsModalOpen, data, peopleCount, selected
         formdata.append("lastName", event.target["lastName"].value)
         formdata.append("email", event.target["email"].value)
         formdata.append("phoneNumber", event.target["phoneNumber"].value)
-        formdata.append("tourId", String(tour_id))
+        formdata.append("tourId", String(data?.id))
 
         for (const key in peopleCount) {
             formdata.append("prices", JSON.stringify({id: key,  count: peopleCount[key]}))
