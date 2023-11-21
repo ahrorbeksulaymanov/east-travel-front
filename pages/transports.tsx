@@ -1,15 +1,16 @@
 import SEO from '@/SEO'
 import ToTopBtn from '@/components/Buttons/toTop'
 import AllMice from '@/components/Mice'
-import MiceFirst from '@/components/Mice/firstBlock'
+import AllTransports from '@/components/Transports'
+import TransportFirst from '@/components/Transports/firstBlock'
 
 export default function Cities () {
   
   return (
       <>
         <SEO />
-        <MiceFirst />
-        <AllMice />
+        <TransportFirst />
+        <AllTransports />
         <ToTopBtn />
       </>
   )

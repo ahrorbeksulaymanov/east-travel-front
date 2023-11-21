@@ -25,7 +25,7 @@ const TourViewSlider = ({data}: {data: any}) => {
 
   return (
     <div className='container mx-auto'>
-      <h1 className='text-center text-[#4E4B66] font-noto text-[40px] mt-24 mb-20 font-semibold'>{data?.title}</h1>
+      <h1 className='text-center text-[#4E4B66] font-noto lg:text-[40px] md:text-[35px] sm:text-[30px] text-[25px] md:mt-24 mt-10 md:mb-20 mb-10 font-semibold'>{data?.title}</h1>
       <Swiper
         loop={true}
         spaceBetween={10}

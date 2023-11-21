@@ -184,6 +184,12 @@ header option{
   background-size: cover;
 }
 
+.trasnport-bg{
+  background: url(../assets/images/transport-bg.png);
+  background-position: center;
+  background-size: cover;
+}
+
 .about-bg{
   background: url(../assets/images/about-bg.png);
   background-position: center;
@@ -201,7 +207,6 @@ header option{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
 .contact-form input::placeholder, textarea::placeholder{
@@ -281,4 +286,33 @@ header option{
 
 .payment-step .ant-steps-item-wait .icon-step{
   background-color: #DBDADE;
+}
+
+
+/* drawer */
+.ant-drawer-header{
+  border: none !important;
+}
+
+
+/* table  */
+table{
+  height: max-content !important;
+}
+
+tbody,
+  tr,
+  td,
+  th {
+    border: 1px solid #B3B3B3 !important;
+  }
+
+td,
+th {
+    padding: 0.7rem 1rem;
+}
+
+
+tbody>tr:nth-of-type(odd) {
+  background-color: #F5F5F5;
 }

@@ -53,7 +53,7 @@ const TourCalculator = ({data, selectedDate}: {data: any, selectedDate:string | 
                             <span className="font-normal">Total</span>
                             <span className="font-normal">${calcAllSumm()}</span>
                         </div>
-                        <button onClick={() => calcAllSumm() ? setIsModalOpen(true) : message.error("Select the number of passengers!")} className="bg-main-color hover:opacity-90 text-white py-2 w-[100%] rounded-md">Checkout</button>
+                        <button onClick={() => calcAllSumm() ? setIsModalOpen(true) : message.warning("Select the number of passengers!")} className="bg-main-color hover:opacity-90 text-white py-2 w-[100%] rounded-md">Checkout</button>
                     </div>
                 </div>
             </div>
