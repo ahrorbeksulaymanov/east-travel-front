@@ -6,52 +6,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import user from '../../../assets/images/user.png';
-
 import { Autoplay, Pagination } from 'swiper/modules';
 import useWindowSize from '@/custom-hooks/useWindowSize';
 import EmployeeCard from '@/components/Cards/EmployeeCard';
 
-
-export default function EmployeesSlider() {
+export default function EmployeesSlider({data} : {data: any}) {
   
   const swiperRef = useRef<any>();
   const {width} = useWindowSize()
-
-  const data: {image: any, title: string}[] = [
-    {
-        image: user,
-        title: "Tashkent"
-    },
-    {
-        image: user,
-        title: "Samarkand"
-    },
-    {
-        image: user,
-        title: "khiva" 
-    },
-    {
-        image: user,
-        title: "Muynak"
-    },
-    {
-        image: user,
-        title: "Shakhrisabz"
-    },
-    {
-        image: user,
-        title: "Zaamin"
-    },
-    {
-      image: user,
-      title: "Shakhrisabz"
-    },
-    {
-        image: user,
-        title: "Zaamin"
-    },
-]
 
   return (
     <div className='pt-[65px] pb-[60px] employees-slider'>
@@ -76,7 +38,7 @@ export default function EmployeesSlider() {
           
         >
           {                
-            data?.map((item, index) => (
+            data?.map((item: any, index: number) => (
               <SwiperSlide className='p-3 mb-12' key={index}>
                 <EmployeeCard item={item} isHover={false} />
               </SwiperSlide>

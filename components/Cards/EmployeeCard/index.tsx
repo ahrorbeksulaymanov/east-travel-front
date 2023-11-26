@@ -1,14 +1,15 @@
+import { FILE_URL } from "@/congif/constans";
 import Image from "next/image";
 
-const EmployeeCard = ({item, isHover = true} : {item: {image: string, title: string}, isHover?:boolean}) => {
+const EmployeeCard = ({item, isHover = true} : {item: any, isHover?:boolean}) => {
 
     return(
         <div data-aos="fade-up" className="lg:col-span-4 sm:col-span-6 col-span-12">
             <div className="rounded-[10px] h-full transition" style={{boxShadow: "0px 0px 12px rgba(0, 0, 0, 0.12)"}}>
-                <Image className="w-[100%] rounded-t-[10px] object-cover sm:h-[300px]" src={item?.image} alt={item?.title} width={400} height={400} />
+                <Image className="w-[100%] rounded-t-[10px] object-cover sm:h-[300px]" src={FILE_URL + item?.photo} alt={item?.title} width={400} height={400} />
                 <div className="pl-[26px] pr-[20px] pt-[9px] pb-[23px]">
-                    <p className="text-[20px] font-medium text-second-color">Abdumalikov Elyor</p>
-                    <p className="font-montserrat text-[#000] opacity-60 my-1">Designer</p>
+                    <p className="text-[20px] font-medium text-second-color">{item?.firstName} {item?.lastName}</p>
+                    <p className="font-montserrat text-[#000] opacity-60 my-1">{item?.jobPosition}</p>
                     <a href="tel:+998917755969" className="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <g clipPath="url(#clip0_269_194)">
@@ -20,7 +21,7 @@ const EmployeeCard = ({item, isHover = true} : {item: {image: string, title: str
                             </clipPath>
                             </defs>
                         </svg>
-                        <p className="font-montserrat text-[#000] opacity-80 ml-2 hover:underline">+998 90 010-85-10</p>
+                        <p className="font-montserrat text-[#000] opacity-80 ml-2 hover:underline">{item?.phone}</p>
                     </a>
                     <a href="mailto:info@easttour.com" className="flex items-center hover:underline">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -33,7 +34,7 @@ const EmployeeCard = ({item, isHover = true} : {item: {image: string, title: str
                             </clipPath>
                             </defs>
                         </svg>
-                        <p className="font-montserrat text-[#000] opacity-80 ml-2 mt-2">abdumalikov@gmail.com</p>
+                        <p className="font-montserrat text-[#000] opacity-80 ml-2 mt-2 break-all">{item?.email}</p>
                     </a>
                 </div>
             </div>

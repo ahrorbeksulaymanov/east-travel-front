@@ -13,7 +13,7 @@ const onRequest = (config: InternalAxiosRequestConfig ): InternalAxiosRequestCon
     config.baseURL = `${BASE_URL}`;
 
     // config.headers = {
-    //     'Authorization': "Bearer " + access_token,
+    //     // 'Authorization': "Bearer " + access_token,
     //     'Access-Control-Allow-Origin': '*',
     //     'Accept': 'application/json',
     //     'Content-Type': 'application/x-www-form-urlencoded'

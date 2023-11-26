@@ -11,28 +11,45 @@ import { BASE_URL } from '@/congif/constans'
 
 
 export async function getStaticProps({ params } : {params: any}) {
-  // fetch single post detail
-  const tourResponse = await fetch(
-    `${BASE_URL}/tours`
-  )
+
+  const tourResponse = await fetch( `${BASE_URL}/tours` )
   const tours = await tourResponse.json()
+
+  const citiesResponse = await fetch( `${BASE_URL}/cities?size=${6}&page=1` )
+  const cities = await citiesResponse.json()
+
+  const hotelsResponse = await fetch(`${BASE_URL}/hotels`)
+  const hotels = await hotelsResponse.json()
+
+  const galleriesResponse = await fetch(`${BASE_URL}/galleries`)
+  const galleries = await galleriesResponse.json()
+
+
+
   return {
     props: {
-      tours
+      tours,
+      cities,
+      hotels,
+      galleries
     },
   }
 }
 
 
-export default function Home({tours}: any) {  
+export default function Home({tours, cities, hotels, galleries}: any) {  
   
+  console.log("hotels", hotels);
+  console.log("galleries", galleries);
+  
+
   return (
       <>
         <SEO />
         <FirstBlock />
         <PopularTours data={tours?.data?.items} />
-        <PopularHotels />
-        <PerfectCities />
+        <PopularHotels data={hotels?.data?.items} />
+        <PerfectCities data={cities?.data?.items} />
         <AboutUsBlock />
         <PhotoGallery />
         <ContactUsBlock />

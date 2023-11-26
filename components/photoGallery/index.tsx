@@ -77,8 +77,8 @@ const PhotoGallery = () => {
                 <h2 className="xl:text-[42px] md:text-[35px] text-[32px] text-second-color font-medium mb-[64px]">Photogallery</h2>
             </div>
             <Swiper
-                slidesPerView={(width > 1300) ?  6 : ( width < 1300 && 768 < width) ? 4 : 1.5}
-                spaceBetween={width > 768 ? 50 : 14}
+                slidesPerView={(width > 1300) ?  6 : ( width < 1300 && 992 < width) ? 4 : 1.5}
+                spaceBetween={0}
                 loop={true}
                 centeredSlides={width < 768 ? false : true}
                 modules={[Autoplay]}
@@ -94,7 +94,7 @@ const PhotoGallery = () => {
                 {
                     data?.map((item, index) => (
                         <SwiperSlide key={index}>
-                            <Image className={`${index % 2 === 0 ? "rounded-[1000px]" : "rounded-[10px]"} ${width > 1600 ?  "h-[450px]" : (width < 1600 && width > 1400) ? "h-[320px]" : "h-[300px]"} w-[320px] h-[450px] object-cover`} src={item.image} alt='gallery' width={400} height={400} />
+                            <Image className={`${width > 1600 ?  "h-[450px]" : (width < 1600 && width > 1400) ? "h-[320px]" : "h-[300px]"} w-[100%] h-[450px] object-cover`} src={item.image} alt='gallery' width={400} height={400} />
                         </SwiperSlide>
                     ))
                 }

@@ -5,49 +5,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 
-import tashkent from '../../../assets/cities/tashkent.jpg';
-import Samarkand from '../../../assets/cities/sam.jpg';
-import khiva from '../../../assets/cities/khiva.jpg';
-import Muynak from '../../../assets/cities/moynak.jpg';
-import shahrisabz from '../../../assets/cities/shahrisabz.jpg';
-import zomin from '../../../assets/cities/zomin.jpg';
-
 import { Autoplay } from 'swiper/modules';
 import CityCard from '@/components/Cards/City';
 import useWindowSize from '@/custom-hooks/useWindowSize';
 
-
-export default function PopularHotelsSlider() {
+export default function PopularHotelsSlider({data} : {data: any}) {
   
   const swiperRef = useRef<any>();
   const {width} = useWindowSize()
-
-  const data: {image: any, title: string}[] = [
-    {
-        image: tashkent,
-        title: "Tashkent"
-    },
-    {
-        image: Samarkand,
-        title: "Samarkand"
-    },
-    {
-        image: khiva,
-        title: "khiva" 
-    },
-    {
-        image: Muynak,
-        title: "Muynak"
-    },
-    {
-        image: shahrisabz,
-        title: "Shakhrisabz"
-    },
-    {
-        image: zomin,
-        title: "Zaamin"
-    },
-]
 
   return (
     <div className='bg-[#FAF9F9] pt-[65px] pb-[60px]'>
@@ -91,7 +56,7 @@ export default function PopularHotelsSlider() {
 
         >
           {                
-            data?.map((item, index) => (
+            data?.map((item: any, index: number) => (
               <SwiperSlide className='py-3' key={index}>
                 <CityCard item={item} isHover={false} />
               </SwiperSlide>

@@ -7,34 +7,34 @@ import shahrisabz from '../../assets/cities/shahrisabz.jpg';
 import zomin from '../../assets/cities/zomin.jpg';
 
 
-const AllCities = () => {
+const AllCities = ({data}: {data: any}) => {
 
-    const data: {image: any, title: string}[] = [
-        {
-            image: tashkent,
-            title: "Tashkent"
-        },
-        {
-            image: Samarkand,
-            title: "Samarkand"
-        },
-        {
-            image: khiva,
-            title: "khiva"
-        },
-        {
-            image: Muynak,
-            title: "Muynak"
-        },
-        {
-            image: shahrisabz,
-            title: "Shakhrisabz"
-        },
-        {
-            image: zomin,
-            title: "Zaamin"
-        },
-    ]
+    // const data: {image: any, title: string}[] = [
+    //     {
+    //         image: tashkent,
+    //         title: "Tashkent"
+    //     },
+    //     {
+    //         image: Samarkand,
+    //         title: "Samarkand"
+    //     },
+    //     {
+    //         image: khiva,
+    //         title: "khiva"
+    //     },
+    //     {
+    //         image: Muynak,
+    //         title: "Muynak"
+    //     },
+    //     {
+    //         image: shahrisabz,
+    //         title: "Shakhrisabz"
+    //     },
+    //     {
+    //         image: zomin,
+    //         title: "Zaamin"
+    //     },
+    // ]
 
     
     return (
@@ -54,7 +54,7 @@ const AllCities = () => {
             </div>
             <div className="grid grid-cols-12 gap-[24px] pb-4">
                     {
-                        data?.map((item, index) => (
+                        data?.map((item: any, index: number) => (
                             <CityCard key={index} item={item} />
                         ))
                     }

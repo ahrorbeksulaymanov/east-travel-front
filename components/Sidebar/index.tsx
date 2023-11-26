@@ -34,14 +34,14 @@ const SidebarDrawer = ({openSidebar, setOpenSidebar}: {openSidebar: boolean, set
         >
             <div>
                 <div className="text-center">
-                    <Link href="/" className={`${router.pathname == "/" ? "text-main-color" : ""} py-5 text-3xl block hover:bg-[#f7f7f7]`}  >Home</Link>
-                    <Link href="/all-tours" className={`${router.pathname == "/all-tours" ? "text-main-color" : ""} py-5 text-3xl block hover:bg-[#f7f7f7]`}>All tours</Link>
-                    <Link href="/hotels" className={`${router.pathname == "/hotels" ? "text-main-color" : ""} py-5 text-3xl block hover:bg-[#f7f7f7]`}>Hotels</Link>
-                    <Link href="/cities" className={`${router.pathname == "/cities" ? "text-main-color" : ""} py-5 text-3xl block hover:bg-[#f7f7f7]`}>Cities</Link>
-                    <Link href="/mice" className={`${router.pathname == "/mice" ? "text-main-color" : ""} py-5 text-3xl block hover:bg-[#f7f7f7]`}>MICE</Link>
-                    <Link href="/transports" className={`${router.pathname == "/transports" ? "text-main-color" : ""} py-5 text-3xl block hover:bg-[#f7f7f7]`}>Transport</Link>
-                    <Link href="/about-us" className={`${router.pathname == "/about-us" ? "text-main-color" : ""} py-5 text-3xl block hover:bg-[#f7f7f7]`}>About us</Link>
-                    <Link href="/contact" className={`${router.pathname == "/contact" ? "text-main-color" : ""} py-5 text-3xl block hover:bg-[#f7f7f7]`} >Contact</Link>
+                    <Link onClick={() => setOpenSidebar(false)} href="/" className={`${router.pathname == "/" ? "text-main-color" : ""} py-5 text-3xl block hover:bg-[#f7f7f7]`}  >Home</Link>
+                    <Link onClick={() => setOpenSidebar(false)} href="/all-tours" className={`${router.pathname == "/all-tours" ? "text-main-color" : ""} py-5 text-3xl block hover:bg-[#f7f7f7]`}>All tours</Link>
+                    <Link onClick={() => setOpenSidebar(false)} href="/hotels" className={`${router.pathname == "/hotels" ? "text-main-color" : ""} py-5 text-3xl block hover:bg-[#f7f7f7]`}>Hotels</Link>
+                    <Link onClick={() => setOpenSidebar(false)} href="/cities" className={`${router.pathname == "/cities" ? "text-main-color" : ""} py-5 text-3xl block hover:bg-[#f7f7f7]`}>Cities</Link>
+                    <Link onClick={() => setOpenSidebar(false)} href="/mice" className={`${router.pathname == "/mice" ? "text-main-color" : ""} py-5 text-3xl block hover:bg-[#f7f7f7]`}>MICE</Link>
+                    <Link onClick={() => setOpenSidebar(false)} href="/transports" className={`${router.pathname == "/transports" ? "text-main-color" : ""} py-5 text-3xl block hover:bg-[#f7f7f7]`}>Transport</Link>
+                    <Link onClick={() => setOpenSidebar(false)} href="/about-us" className={`${router.pathname == "/about-us" ? "text-main-color" : ""} py-5 text-3xl block hover:bg-[#f7f7f7]`}>About us</Link>
+                    <Link onClick={() => setOpenSidebar(false)} href="/contact" className={`${router.pathname == "/contact" ? "text-main-color" : ""} py-5 text-3xl block hover:bg-[#f7f7f7]`} >Contact</Link>
                 </div>
 
                 <div className="mt-12">

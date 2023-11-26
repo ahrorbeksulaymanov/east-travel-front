@@ -1,28 +1,10 @@
 import BlockHeader from "../../blockHeader";
 import HotelCard from "../../Cards/Hotel";
-import RoadSide from '../../../assets/images/roadSide.jpg';
-import konstantin from '../../../assets/images/konstantin.jpg';
-import erkinpalace from '../../../assets/images/erkin-palace.jpg';
 import { useRouter } from "next/router";
 
-const PopularHotels = () => {
+const PopularHotels = ({data} : {data: any}) => {
 
     const router = useRouter();
-
-    const data: {image: any, title: string}[] = [
-        {
-            image: RoadSide,
-            title: "Roadside, Tashkent"
-        },
-        {
-            image: konstantin,
-            title: "Konstantin, Samarkand" 
-        },
-        {
-            image: erkinpalace,
-            title: "Erkin Palace, Khiva"
-        }
-    ]
 
     return (
         <div className="font-noto md:pt-[93px] pt-[34px] md:pb-[142px] pb-[100px]">
@@ -37,7 +19,7 @@ const PopularHotels = () => {
                 />
                 <div className="grid grid-cols-12 gap-[25px]">
                     {                
-                        data?.map((item, index) => (
+                        data?.map((item: any, index: number) => (
                             <HotelCard key={index} item={item} />
                         ))
                     }

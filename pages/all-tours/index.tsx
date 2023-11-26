@@ -7,23 +7,33 @@ import { BASE_URL } from '@/congif/constans'
 
 
 export async function getStaticProps({ params } : {params: any}) {
+
   const response = await fetch(
     `${BASE_URL}/tours`
   )
   const tours = await response.json()
+
+  const citiesResponse = await fetch(
+    `${BASE_URL}/cities`
+  )
+  const cities = await citiesResponse.json()
+
   return {
-    props: tours,
+    props: {
+      tours,
+      cities
+    },
   }
 }
 
-export default function Tours(params: any) {  
+export default function Tours({tours, cities}: any) {    
   
   return (
       <>
         <SEO />
         <AllToursFirst />
-        <AllTours data={params?.data?.items} />
-        <PopularHotelsSlider />
+        <AllTours data={tours?.data?.items} />
+        <PopularHotelsSlider data={cities?.data?.items} />
         <ToTopBtn />
       </>
   )

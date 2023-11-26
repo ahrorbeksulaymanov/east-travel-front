@@ -9,9 +9,9 @@ import CarsClider from "./Slider";
 import { Segmented } from 'antd';
 import { useState } from 'react';
 
-const AllTransports = () => {
+const AllTransports = ({transports, transportTypes}: {transports: any, transportTypes: {id: number, name: string}[]}) => {
 
-    const [type, setType] = useState<'Sedan' | 'Avto'>("Sedan");
+    const [type, setType] = useState<number>(transportTypes[0]?.id | 1);
 
     const data: {image: any, title: string}[] = [
         {
@@ -54,34 +54,48 @@ const AllTransports = () => {
                 </div>
             </div>
             <div className="tour-tab-items">
-                <Segmented options={['Sedan', 'Avto']} defaultValue={type} onChange={(e:any) => setType(e)} className='bg-main-color mt-12 mb-5' style={{background: "white", border: ""}} />
+                <Segmented 
+                    // options={['Sedan', 'Avto']}  
+                    defaultValue={type} 
+                    onChange={(e:any) => setType(e)} 
+                    className='bg-main-color mt-12 mb-5' 
+                    style={{background: "white", border: ""}} 
+                    options={transportTypes?.map((item: any) => ({label: item?.name, value: item?.id}))}
+                />
             </div>
 
-            <h2 className='text-[28px] text-main-color font-medium my-8'>Checrlet Captiva</h2>
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[13px] pb-4">
-                <div className="p-[10px]" style={{border: "1px solid rgba(0, 0, 0, 0.30)"}}>
-                    <Image src={Samarkand} className="w-[100%]" alt="Car" />
-                </div>
-                <div className="p-[10px]" style={{border: "1px solid rgba(0, 0, 0, 0.30)"}}>
-                    <CarsClider data={data} />
-                </div>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>Title</td>
-                            <td>Checrlet Captiva</td>
-                        </tr>
-                        <tr>
-                            <td>Band</td>
-                            <td>Chevrolet</td>
-                        </tr>
-                        <tr>
-                            <td>Capacity</td>
-                            <td>4</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+
+            {
+                transports?.map((item: any, index: number) => (
+                    <div key={index}>
+                        <h2 className='text-[28px] text-main-color font-medium my-8'>Checrlet Captiva</h2>
+                        <div  className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[13px] pb-4">
+                            <div className="p-[10px]" style={{border: "1px solid rgba(0, 0, 0, 0.30)"}}>
+                                <Image src={Samarkand} className="w-[100%]" alt="Car" />
+                            </div>
+                            <div className="p-[10px]" style={{border: "1px solid rgba(0, 0, 0, 0.30)"}}>
+                                <CarsClider data={data} />
+                            </div>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Title</td>
+                                        <td>Checrlet Captiva</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Band</td>
+                                        <td>Chevrolet</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Capacity</td>
+                                        <td>4</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                ))
+            }
         </div>
     )
 }
