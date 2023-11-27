@@ -1,4 +1,5 @@
 import { BASE_URL } from '@/congif/constans';
+import { IPrice } from '@/models';
 import { Modal, Steps } from 'antd';
 import axios from 'axios';
 import { useRouter } from 'next/router';
@@ -93,7 +94,7 @@ const PaymentModal =  ({isModalOpen, setIsModalOpen, data, peopleCount, selected
                     <div className="p-[24px] pb-[14px] rounded-md" style={{border: "1px solid #DDE2E5"}}>
                         <h3 className="font-semibold text-[15px] mb-4">Price Details</h3>
                         {
-                            data?.prices?.map((item: any) => (
+                            data?.prices?.map((item: IPrice) => (
                                 <div key={item?.id} className="flex justify-between mb-2">
                                     <span className="font-normal">{item?.priceCondition?.name}:</span>
                                     <span className="font-normal">{peopleCount[item?.id] ? peopleCount[item?.id] : 0} x ${item?.price}</span>

@@ -1,7 +1,8 @@
+import { ICity } from "@/models";
 import BlockHeader from "../../blockHeader";
 import CityCard from "../../Cards/City";
 
-const PerfectCities = ({data} : {data: any}) => {
+const PerfectCities = ({data} : {data: ICity[]}) => {
 
     return (
         <div className="font-noto bg-[#F8F8F8] md:pt-[64px] pt-[34px] md:pb-[94px] pb-[54px]">
@@ -16,7 +17,7 @@ const PerfectCities = ({data} : {data: any}) => {
                 />
                 <div className="grid grid-cols-12 gap-[30px]">
                     {
-                        data?.map((item: any, index: number) => (
+                        data?.map((item: ICity, index: number) => (
                             <CityCard key={index} item={item} />
                         ))
                     }

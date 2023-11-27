@@ -3,6 +3,8 @@ import ToTopBtn from '@/components/Buttons/toTop'
 import AllTransports from '@/components/Transports'
 import TransportFirst from '@/components/Transports/firstBlock'
 import { BASE_URL } from '@/congif/constans'
+import { ITransportType } from '@/models'
+import { useState } from 'react'
 
 
 export async function getStaticProps({ params } : {params: any}) {
@@ -22,15 +24,18 @@ export async function getStaticProps({ params } : {params: any}) {
 }
 
 
-export default function Transports ({transportTypes, transports}: any) {
+export default function Transports ({transportTypes, transports}: {transportTypes: {message: string, status: number, data: ITransportType[]}, transports: any}) {
   
-  console.log("transportTypes, transports",transportTypes?.data, transports);
+  const [transportTypeId, settransportTypeId] = useState<number>()
+
+  console.log("transportTypes",transportTypes);
+  console.log("transports", transports);
   
   return (
       <>
         <SEO />
         <TransportFirst />
-        <AllTransports transportTypes={transportTypes?.data} transports={transports?.data?.items} />
+        <AllTransports transportTypes={transportTypes?.data} transports={transports?.data?.items} settransportTypeId={settransportTypeId} />
         <ToTopBtn />
       </>
   )

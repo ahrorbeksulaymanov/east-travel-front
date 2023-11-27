@@ -1,8 +1,9 @@
+import { ITour } from "@/models";
 import BlockHeader from "../../blockHeader";
 import TourCards from "../tour-cards";
 import { useRouter } from "next/router";
 
-const PopularTours = ({data} : {data: any}) => {
+const PopularTours = ({data} : {data: ITour[]}) => {
 
     const router = useRouter()
 

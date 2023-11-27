@@ -1,6 +1,7 @@
+import { ITour } from "@/models";
 import TourCards from "./tour-cards";
 
-const AllTours = ({data} : {data: any}) => {
+const AllTours = ({data} : {data: ITour[]}) => {
     
     return (
         <div className="container mx-auto">

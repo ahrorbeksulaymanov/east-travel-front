@@ -13,13 +13,14 @@ import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 
 import Image from 'next/image';
 import { FILE_URL } from '@/congif/constans';
+import { ITour } from '@/models';
 
-const TourViewSlider = ({data}: {data: any}) => {
+const TourViewSlider = ({data}: {data: ITour}) => {
 
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
 
-  const images: string[] = data?.photos?.length ? [
-    (data?.mainPhoto ? data?.mainPhoto : undefined),
+  let images: string[] = data?.photos?.length ? [
+    data?.mainPhoto,
     ...data?.photos
   ] : []
 
@@ -35,11 +36,11 @@ const TourViewSlider = ({data}: {data: any}) => {
         className="mySwiper2"
       >
         {
-            images.map((item, index) => (
-                <SwiperSlide key={index}>
-                    <Image src={FILE_URL + item} width={2000} height={2000} className='rounded w-[100%] h-[800px] object-cover' alt='aral-sea' />
-                </SwiperSlide>
-            ))
+          images?.map((item, index) => (
+            <SwiperSlide key={index}>
+                <Image src={FILE_URL + item} width={2000} height={2000} className='rounded w-[100%] h-[800px] object-cover' alt='aral-sea' />
+            </SwiperSlide>
+          ))
         }
       </Swiper>
       <Swiper
@@ -53,11 +54,11 @@ const TourViewSlider = ({data}: {data: any}) => {
         className="animation-slider mt-5"
       >
         {
-            images.map((item, index) => (
-                <SwiperSlide key={index}>
-                    <Image src={FILE_URL + item} width={1000} height={500} className='rounded w-[100%] h-[200px] object-cover'  alt='aral-sea' />
-                </SwiperSlide>
-            ))
+          images?.map((item, index) => (
+            <SwiperSlide key={index}>
+              <Image src={FILE_URL + item} width={1000} height={500} className='rounded w-[100%] h-[200px] object-cover'  alt='aral-sea' />
+            </SwiperSlide>
+          ))
         }
       </Swiper>
     </div>

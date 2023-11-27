@@ -6,6 +6,7 @@ import TourViewFirst from "@/components/TourView/firstBlock";
 import TourViewSlider from "@/components/TourView/slider";
 import TourTab from "@/components/TourView/tabs";
 import { BASE_URL } from "@/congif/constans";
+import { ITour } from "@/models";
 import { useState } from "react";
 
 export async function getStaticProps(context: any) {
@@ -22,27 +23,26 @@ export async function getStaticProps(context: any) {
   export async function getStaticPaths() {
     const res = await fetch(`${BASE_URL}/tours`)
     const posts = await res.json()
-    const paths = posts?.data?.items?.map((i: any) => ({ params: { tour_id: `${i?.slug}` } }))
+    const paths = posts?.data?.items?.map((i: ITour) => ({ params: { tour_id: `${i?.slug}` } }))
     return {
       paths, 
       fallback: true,
     }
   }
-  
 
-export default function TourView(params: any) {
+export default function TourView(params: {data: ITour, message: string, status: number}) {  
 
   const [selectedDate, setselectedDate] = useState<string>()
     
-    return (
-        <>
-            <SEO />
-            <TourViewFirst title={params?.data?.title} />
-            <TourViewSlider data={params?.data} />
-            <TourTab data={params?.data} />
-            <TourCalendar data={params?.data} setselectedDate={setselectedDate} />
-            <TourCalculator data={params?.data} selectedDate={selectedDate} />
-            <ToTopBtn />
-        </>
-    )
+  return (
+    <>
+      <SEO />
+      <TourViewFirst title={params?.data?.title} />
+      <TourViewSlider data={params?.data} />
+      <TourTab data={params?.data} />
+      <TourCalendar data={params?.data} setselectedDate={setselectedDate} />
+      <TourCalculator data={params?.data} selectedDate={selectedDate} />
+      <ToTopBtn />
+    </>
+  )
 }

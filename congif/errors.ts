@@ -43,14 +43,6 @@ export class ResponseError {
         message.error("Ma'lumot topilmadi!");
     }
 
-    // private 422(data: any): void {
-    //     message.error(data?.errors);
-    // }
-
-    // private 500(): void {
-    //     // message.error("Code status: 500");
-    // }
-
     private withoutStatusError() {
         // message.warning("warning")
         // // createBrowserHistory().push("/disconnect")

@@ -1,8 +1,9 @@
 import { FILE_URL } from "@/congif/constans";
+import { ITour } from "@/models";
 import Image from "next/image";
 import Link from "next/link";
 
-const TourCard = ({item} : {item: any}) => {
+const TourCard = ({item} : {item: ITour}) => {
 
     return(
         <Link href={`/all-tours/${item?.slug}`} data-aos="fade-up" className="lg:col-span-4 sm:col-span-6 col-span-12">

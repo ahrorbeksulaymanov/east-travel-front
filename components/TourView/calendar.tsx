@@ -1,8 +1,9 @@
+import { ITour } from '@/models';
 import { Calendar } from 'antd';
 import dayjs from 'dayjs'
 import { Dispatch } from 'react';
 
-const TourCalendar = ({data, setselectedDate}: {data: any, setselectedDate: Dispatch<string>}) => {
+const TourCalendar = ({data, setselectedDate}: {data: ITour, setselectedDate: Dispatch<string>}) => {
     
     return (
         <div className='container mx-auto tour-calendar font-public-sans mt-[100px]'>

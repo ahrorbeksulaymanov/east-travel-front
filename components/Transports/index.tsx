@@ -7,11 +7,12 @@ import zomin from '../../assets/cities/zomin.jpg';
 import Image from "next/image";
 import CarsClider from "./Slider";
 import { Segmented } from 'antd';
-import { useState } from 'react';
+import { Dispatch, useState } from 'react';
+import { ITransportType } from '@/models';
 
-const AllTransports = ({transports, transportTypes}: {transports: any, transportTypes: {id: number, name: string}[]}) => {
+const AllTransports = ({transports, transportTypes, settransportTypeId}: {transports: any, transportTypes: ITransportType[], settransportTypeId: Dispatch<number | undefined>}) => {
 
-    const [type, setType] = useState<number>(transportTypes[0]?.id | 1);
+    const [type, setType] = useState<number>(transportTypes[0]?.id);
 
     const data: {image: any, title: string}[] = [
         {
@@ -57,10 +58,10 @@ const AllTransports = ({transports, transportTypes}: {transports: any, transport
                 <Segmented 
                     // options={['Sedan', 'Avto']}  
                     defaultValue={type} 
-                    onChange={(e:any) => setType(e)} 
+                    onChange={(e:any) => {setType(e); settransportTypeId(e)}} 
                     className='bg-main-color mt-12 mb-5' 
                     style={{background: "white", border: ""}} 
-                    options={transportTypes?.map((item: any) => ({label: item?.name, value: item?.id}))}
+                    options={transportTypes?.map((item: ITransportType) => ({label: item?.name, value: item?.id}))}
                 />
             </div>
 

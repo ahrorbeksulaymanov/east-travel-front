@@ -1,10 +1,11 @@
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import {message} from 'antd'
+import { ITour } from "@/models";
 
 const PaymentModal = dynamic(() => import('@/components/TourView/payment/modal'), { ssr: false })
 
-const TourCalculator = ({data, selectedDate}: {data: any, selectedDate:string | undefined}) => {
+const TourCalculator = ({data, selectedDate}: {data: ITour, selectedDate:string | undefined}) => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [peopleCount, setpeopleCount] = useState<{[name: number]: number}>({} as {[name: number]: number});
@@ -20,7 +21,7 @@ const TourCalculator = ({data, selectedDate}: {data: any, selectedDate:string | 
             <div className="grid grid-cols-12 gap-[30px]">
                 <div className="md:col-span-8 col-span-12">
                     {
-                        data?.prices?.map((item: any) => (
+                        data?.prices?.map((item) => (
                             <div key={item?.id} className="p-[24px] pb-[14px] rounded-md mb-7" style={{boxShadow: "0px 4px 18px rgba(75, 70, 92, 0.10)"}}>
                                 <div className="flex justify-between items-center mb-2">
                                     <h3 className="font-semibold text-[20px]">{item?.priceCondition?.name} ({item?.priceCondition?.ageFrom} - {item?.priceCondition?.ageTo})</h3>

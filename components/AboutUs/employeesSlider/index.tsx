@@ -9,8 +9,9 @@ import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
 import useWindowSize from '@/custom-hooks/useWindowSize';
 import EmployeeCard from '@/components/Cards/EmployeeCard';
+import { IEmployee } from '@/models';
 
-export default function EmployeesSlider({data} : {data: any}) {
+export default function EmployeesSlider({data} : {data: IEmployee[]}) {
   
   const swiperRef = useRef<any>();
   const {width} = useWindowSize()
@@ -38,7 +39,7 @@ export default function EmployeesSlider({data} : {data: any}) {
           
         >
           {                
-            data?.map((item: any, index: number) => (
+            data?.map((item: IEmployee, index: number) => (
               <SwiperSlide className='p-3 mb-12' key={index}>
                 <EmployeeCard item={item} isHover={false} />
               </SwiperSlide>

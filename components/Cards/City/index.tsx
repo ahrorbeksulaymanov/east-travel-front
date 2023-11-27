@@ -1,7 +1,8 @@
 import { FILE_URL } from "@/congif/constans";
+import { ICity } from "@/models";
 import Image from "next/image";
 
-const CityCard = ({item, isHover = true} : {item: any, isHover?:boolean}) => {
+const CityCard = ({item, isHover = true} : {item: ICity, isHover?:boolean}) => {
 
     return(
         <div data-aos="fade-up" className="lg:col-span-4 sm:col-span-6 col-span-12">

@@ -1,42 +1,8 @@
+import { ICity } from "@/models";
 import CityCard from "../Cards/City";
-import tashkent from '../../assets/cities/tashkent.jpg';
-import Samarkand from '../../assets/cities/sam.jpg';
-import khiva from '../../assets/cities/khiva.jpg';
-import Muynak from '../../assets/cities/moynak.jpg';
-import shahrisabz from '../../assets/cities/shahrisabz.jpg';
-import zomin from '../../assets/cities/zomin.jpg';
 
+const AllCities = ({data}: {data: ICity[]}) => {
 
-const AllCities = ({data}: {data: any}) => {
-
-    // const data: {image: any, title: string}[] = [
-    //     {
-    //         image: tashkent,
-    //         title: "Tashkent"
-    //     },
-    //     {
-    //         image: Samarkand,
-    //         title: "Samarkand"
-    //     },
-    //     {
-    //         image: khiva,
-    //         title: "khiva"
-    //     },
-    //     {
-    //         image: Muynak,
-    //         title: "Muynak"
-    //     },
-    //     {
-    //         image: shahrisabz,
-    //         title: "Shakhrisabz"
-    //     },
-    //     {
-    //         image: zomin,
-    //         title: "Zaamin"
-    //     },
-    // ]
-
-    
     return (
         <div className="container mx-auto">
             <div className="md:my-[64px] my-[40px]">
@@ -54,7 +20,7 @@ const AllCities = ({data}: {data: any}) => {
             </div>
             <div className="grid grid-cols-12 gap-[24px] pb-4">
                     {
-                        data?.map((item: any, index: number) => (
+                        data?.map((item: ICity, index: number) => (
                             <CityCard key={index} item={item} />
                         ))
                     }

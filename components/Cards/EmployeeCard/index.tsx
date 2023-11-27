@@ -1,12 +1,13 @@
 import { FILE_URL } from "@/congif/constans";
+import { IEmployee } from "@/models";
 import Image from "next/image";
 
-const EmployeeCard = ({item, isHover = true} : {item: any, isHover?:boolean}) => {
+const EmployeeCard = ({item, isHover = true} : {item: IEmployee, isHover?:boolean}) => {
 
     return(
         <div data-aos="fade-up" className="lg:col-span-4 sm:col-span-6 col-span-12">
             <div className="rounded-[10px] h-full transition" style={{boxShadow: "0px 0px 12px rgba(0, 0, 0, 0.12)"}}>
-                <Image className="w-[100%] rounded-t-[10px] object-cover sm:h-[300px]" src={FILE_URL + item?.photo} alt={item?.title} width={400} height={400} />
+                <Image className="w-[100%] rounded-t-[10px] object-cover sm:h-[300px]" src={FILE_URL + item?.photo} alt={item?.firstName + " " + item?.lastName} width={400} height={400} />
                 <div className="pl-[26px] pr-[20px] pt-[9px] pb-[23px]">
                     <p className="text-[20px] font-medium text-second-color">{item?.firstName} {item?.lastName}</p>
                     <p className="font-montserrat text-[#000] opacity-60 my-1">{item?.jobPosition}</p>

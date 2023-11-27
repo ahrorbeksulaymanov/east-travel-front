@@ -8,9 +8,10 @@ import PhotoGallery from '@/components/photoGallery'
 import PopularHotels from '@/components/Hotels/popularHotels'
 import PopularTours from '@/components/AllTours/popularTours'
 import { BASE_URL } from '@/congif/constans'
+import { IBasic, ICity, ITour } from '@/models'
 
 
-export async function getStaticProps({ params } : {params: any}) {
+export async function getStaticProps() {
 
   const tourResponse = await fetch( `${BASE_URL}/tours` )
   const tours = await tourResponse.json()
@@ -37,7 +38,7 @@ export async function getStaticProps({ params } : {params: any}) {
 }
 
 
-export default function Home({tours, cities, hotels, galleries}: any) {  
+export default function Home({tours, cities, hotels, galleries}: {cities: IBasic<ICity[]>, tours: IBasic<ITour[]>, hotels: any, galleries: any }) {  
   
   console.log("hotels", hotels);
   console.log("galleries", galleries);

@@ -8,8 +8,9 @@ import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
 import CityCard from '@/components/Cards/City';
 import useWindowSize from '@/custom-hooks/useWindowSize';
+import { ICity } from '@/models';
 
-export default function PopularHotelsSlider({data} : {data: any}) {
+export default function PopularHotelsSlider({data} : {data: ICity[]}) {
   
   const swiperRef = useRef<any>();
   const {width} = useWindowSize()
@@ -56,7 +57,7 @@ export default function PopularHotelsSlider({data} : {data: any}) {
 
         >
           {                
-            data?.map((item: any, index: number) => (
+            data?.map((item: ICity, index: number) => (
               <SwiperSlide className='py-3' key={index}>
                 <CityCard item={item} isHover={false} />
               </SwiperSlide>

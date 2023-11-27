@@ -4,9 +4,10 @@ import AllToursFirst from '@/components/AllTours/firstBlock'
 import PopularHotelsSlider from '@/components/AllTours/citiesSlider'
 import ToTopBtn from '@/components/Buttons/toTop'
 import { BASE_URL } from '@/congif/constans'
+import { IBasic, ICity, ITour } from '@/models'
 
 
-export async function getStaticProps({ params } : {params: any}) {
+export async function getStaticProps() {
 
   const response = await fetch(
     `${BASE_URL}/tours`
@@ -26,7 +27,7 @@ export async function getStaticProps({ params } : {params: any}) {
   }
 }
 
-export default function Tours({tours, cities}: any) {    
+export default function Tours({tours, cities}: {tours: IBasic<ITour[]>, cities: IBasic<ICity[]>}) {    
   
   return (
       <>

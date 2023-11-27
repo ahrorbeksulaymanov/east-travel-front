@@ -1,7 +1,6 @@
 import instance from "@/congif/axios";
 import { notification } from "antd";
 
-
 const ContactForm = () => {
 
     const [api, contextHolder] = notification.useNotification();
@@ -35,10 +34,8 @@ const ContactForm = () => {
           data: formdata,
         });
 
-        console.log("response.data", response.data);
         if(response.data?.status == 1) {
             openNotification()
-            console.log("eeeeeeeeeeeeeeeeeee", response.data);
         }
         
         return response.data;

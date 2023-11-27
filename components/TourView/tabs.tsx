@@ -1,8 +1,9 @@
+import { ITour } from '@/models';
 import { Segmented } from 'antd';
 import { useState } from 'react';
 
 
-const TourTab = ({data}: {data: any}) => {
+const TourTab = ({data}: {data: ITour}) => {
 
     const [type, setType] = useState<"Description" | "Itinerary">("Description");
 
@@ -12,7 +13,7 @@ const TourTab = ({data}: {data: any}) => {
             {
                 type === 'Description' ? 
                 <p className='font-noto text-lg leading-[40px] mt-3' dangerouslySetInnerHTML={{__html: data?.description}} /> : 
-                data?.itineraries?.map((item: any) => (
+                data?.itineraries?.map((item) => (
                     <div key={item?.id}>
                         <p className='text-base font-bold mt-6'>{item?.day}</p>
                         <p className='font-noto text-lg leading-[40px] mt-3' dangerouslySetInnerHTML={{__html: item?.description}} />
