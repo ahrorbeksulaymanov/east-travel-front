@@ -68,3 +68,43 @@ export interface ITransportType{
     id: number;
     name: string;
 }
+
+export interface ITransport{
+    id: number;
+    title: string;
+    brand: string;
+    capacity: number;
+    description: string;
+    mainPhoto: string;
+    transportType: ITransportType;
+}
+
+export interface IDistrict{
+    id: number;
+    name: string;
+    region: {
+        id: number;
+        name: string;
+    }
+}
+
+export interface IHotel{
+    id: number;
+    title: string;
+    mainPhoto: string;
+    photos: string[];
+    district: IDistrict
+}
+
+export interface IGallery{
+    id: number;
+    description: string;
+    photo: string;
+}
+
+export interface IMice{
+    id: number;
+    description: string;
+    photo: string;
+    title: string;
+}

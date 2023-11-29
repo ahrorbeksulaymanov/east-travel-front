@@ -1,8 +1,9 @@
+import { IHotel } from "@/models";
 import BlockHeader from "../../blockHeader";
 import HotelCard from "../../Cards/Hotel";
 import { useRouter } from "next/router";
 
-const PopularHotels = ({data} : {data: any}) => {
+const PopularHotels = ({data} : {data: IHotel[]}) => {
 
     const router = useRouter();
 
@@ -19,7 +20,7 @@ const PopularHotels = ({data} : {data: any}) => {
                 />
                 <div className="grid grid-cols-12 gap-[25px]">
                     {                
-                        data?.map((item: any, index: number) => (
+                        data?.map((item, index) => (
                             <HotelCard key={index} item={item} />
                         ))
                     }

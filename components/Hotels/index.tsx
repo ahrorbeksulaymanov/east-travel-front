@@ -1,30 +1,11 @@
-import RoadSide from '../../assets/images/roadSide.jpg';
-import konstantin from '../../assets/images/konstantin.jpg';
-import erkinpalace from '../../assets/images/erkin-palace.jpg';
-
 import HotelCard from "../Cards/Hotel";
-import { Select, message } from 'antd';
-import instance from '@/congif/axios';
-import { useEffect } from 'react';
+import { Select } from 'antd';
+import { IHotel } from '@/models';
 
 const filterOption = (input: string, option?: { label: string; value: string }) => (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
 
-const AllHotels = ({data: data2} : {data: any}) => {
+const AllHotels = ({data} : {data: IHotel[]}) => {
     
-    const data: {image: any, title: string}[] = [
-        {
-            image: RoadSide,
-            title: "Roadside, Tashkent"
-        },
-        {
-            image: konstantin,
-            title: "Konstantin, Samarkand"
-        },
-        {
-            image: erkinpalace,
-            title: "Erkin Palace, Khiva"
-        }
-    ]
 
     // const getRegions = async () => {
     //     try {
@@ -58,8 +39,6 @@ const AllHotels = ({data: data2} : {data: any}) => {
                     showSearch
                     placeholder="Select a person"
                     optionFilterProp="children"
-                    // onChange={onChange}
-                    // onSearch={onSearch}
                     filterOption={filterOption}
                     options={[
                     {

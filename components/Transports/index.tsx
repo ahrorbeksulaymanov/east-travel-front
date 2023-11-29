@@ -8,9 +8,10 @@ import Image from "next/image";
 import CarsClider from "./Slider";
 import { Segmented } from 'antd';
 import { Dispatch, useState } from 'react';
-import { ITransportType } from '@/models';
+import { ITransport, ITransportType } from '@/models';
+import { FILE_URL } from '@/congif/constans';
 
-const AllTransports = ({transports, transportTypes, settransportTypeId}: {transports: any, transportTypes: ITransportType[], settransportTypeId: Dispatch<number | undefined>}) => {
+const AllTransports = ({transports, transportTypes, settransportTypeId}: {transports: ITransport[], transportTypes: ITransportType[], settransportTypeId: Dispatch<number | undefined>}) => {
 
     const [type, setType] = useState<number>(transportTypes[0]?.id);
 
@@ -61,38 +62,41 @@ const AllTransports = ({transports, transportTypes, settransportTypeId}: {transp
                     onChange={(e:any) => {setType(e); settransportTypeId(e)}} 
                     className='bg-main-color mt-12 mb-5' 
                     style={{background: "white", border: ""}} 
-                    options={transportTypes?.map((item: ITransportType) => ({label: item?.name, value: item?.id}))}
+                    options={transportTypes?.map((item) => ({label: item?.name, value: item?.id}))}
                 />
             </div>
 
 
             {
-                transports?.map((item: any, index: number) => (
+                transports?.map((item, index) => (
                     <div key={index}>
-                        <h2 className='text-[28px] text-main-color font-medium my-8'>Checrlet Captiva</h2>
+                        <h2 className='text-[28px] text-main-color font-medium my-8'>{item?.title}</h2>
                         <div  className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[13px] pb-4">
                             <div className="p-[10px]" style={{border: "1px solid rgba(0, 0, 0, 0.30)"}}>
-                                <Image src={Samarkand} className="w-[100%]" alt="Car" />
+                                <Image src={FILE_URL + item?.mainPhoto} width={400} height={400} className="w-[100%]" alt={item?.title} />
                             </div>
                             <div className="p-[10px]" style={{border: "1px solid rgba(0, 0, 0, 0.30)"}}>
                                 <CarsClider data={data} />
                             </div>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td>Title</td>
-                                        <td>Checrlet Captiva</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Band</td>
-                                        <td>Chevrolet</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Capacity</td>
-                                        <td>4</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div>
+                                <table className='w-[100%]'>
+                                    <tbody>
+                                        <tr>
+                                            <td>Title</td>
+                                            <td>{item?.title}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Band</td>
+                                            <td>{item?.brand}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Capacity</td>
+                                            <td>{item?.capacity}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p className='mt-4 font-semibold text-[#5E6282]'>Description: {item?.description}</p>
+                            </div>
                         </div>
                     </div>
                 ))

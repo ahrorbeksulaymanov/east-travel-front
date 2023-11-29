@@ -8,24 +8,21 @@ import PhotoGallery from '@/components/photoGallery'
 import PopularHotels from '@/components/Hotels/popularHotels'
 import PopularTours from '@/components/AllTours/popularTours'
 import { BASE_URL } from '@/congif/constans'
-import { IBasic, ICity, ITour } from '@/models'
-
+import { IBasic, ICity, IGallery, IHotel, ITour } from '@/models'
 
 export async function getStaticProps() {
 
-  const tourResponse = await fetch( `${BASE_URL}/tours` )
+  const tourResponse = await fetch( `${BASE_URL}/tours?size=${6}&page=1` )
   const tours = await tourResponse.json()
 
   const citiesResponse = await fetch( `${BASE_URL}/cities?size=${6}&page=1` )
   const cities = await citiesResponse.json()
 
-  const hotelsResponse = await fetch(`${BASE_URL}/hotels`)
+  const hotelsResponse = await fetch(`${BASE_URL}/hotels?size=${3}&page=1`)
   const hotels = await hotelsResponse.json()
 
   const galleriesResponse = await fetch(`${BASE_URL}/galleries`)
   const galleries = await galleriesResponse.json()
-
-
 
   return {
     props: {
@@ -38,11 +35,7 @@ export async function getStaticProps() {
 }
 
 
-export default function Home({tours, cities, hotels, galleries}: {cities: IBasic<ICity[]>, tours: IBasic<ITour[]>, hotels: any, galleries: any }) {  
-  
-  console.log("hotels", hotels);
-  console.log("galleries", galleries);
-  
+export default function Home({tours, cities, hotels, galleries}: {cities: IBasic<ICity[]>, tours: IBasic<ITour[]>, hotels: IBasic<IHotel[]>, galleries: IBasic<IGallery[]> }) {    
 
   return (
       <>
@@ -52,7 +45,7 @@ export default function Home({tours, cities, hotels, galleries}: {cities: IBasic
         <PopularHotels data={hotels?.data?.items} />
         <PerfectCities data={cities?.data?.items} />
         <AboutUsBlock />
-        <PhotoGallery />
+        <PhotoGallery data={galleries?.data?.items} />
         <ContactUsBlock />
         <ToTopBtn />
       </>

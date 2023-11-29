@@ -1,7 +1,7 @@
 import SEO from '@/SEO'
 import AllTours from '@/components/AllTours'
 import AllToursFirst from '@/components/AllTours/firstBlock'
-import PopularHotelsSlider from '@/components/AllTours/citiesSlider'
+import PopularCitiesSlider from '@/components/AllTours/citiesSlider'
 import ToTopBtn from '@/components/Buttons/toTop'
 import { BASE_URL } from '@/congif/constans'
 import { IBasic, ICity, ITour } from '@/models'
@@ -34,7 +34,7 @@ export default function Tours({tours, cities}: {tours: IBasic<ITour[]>, cities: 
         <SEO />
         <AllToursFirst />
         <AllTours data={tours?.data?.items} />
-        <PopularHotelsSlider data={cities?.data?.items} />
+        <PopularCitiesSlider data={cities?.data?.items} />
         <ToTopBtn />
       </>
   )

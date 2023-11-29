@@ -3,27 +3,29 @@ import ToTopBtn from '@/components/Buttons/toTop'
 import AllMice from '@/components/Mice'
 import MiceFirst from '@/components/Mice/firstBlock'
 import { BASE_URL } from '@/congif/constans'
+import { IBasic, IMice } from '@/models'
 
+export async function getStaticProps() {
 
-export async function getStaticProps({ params } : {params: any}) {
-  const response = await fetch(
-    `${BASE_URL}/mice`
-  )
-  const tours = await response.json()
+  const miceResponse = await fetch( `${BASE_URL}/mice` )
+  const mice = await miceResponse.json()
+
   return {
-    props: tours,
+    props: {
+      mice,
+    },
   }
 }
 
-export default function Mice (params: any) {
+export default function Mice ({mice}: {mice: IBasic<IMice[]>}) {
 
-  console.log("mice", params);
+  console.log("mice", mice);
 
   return (
       <>
         <SEO />
         <MiceFirst />
-        <AllMice data={params?.data?.items} />
+        <AllMice data={mice?.data?.items} />
         <ToTopBtn />
       </>
   )

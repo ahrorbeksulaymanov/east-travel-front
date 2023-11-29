@@ -10,7 +10,7 @@ import CityCard from '@/components/Cards/City';
 import useWindowSize from '@/custom-hooks/useWindowSize';
 import { ICity } from '@/models';
 
-export default function PopularHotelsSlider({data} : {data: ICity[]}) {
+export default function PopularCitiesSlider({data} : {data: ICity[]}) {
   
   const swiperRef = useRef<any>();
   const {width} = useWindowSize()

@@ -1,6 +1,7 @@
-import CityCard from "../Cards/City";
+import { IMice } from "@/models";
+import MiceCard from "../Cards/Mice";
 
-const AllMice = ({data}: {data: any}) => {
+const AllMice = ({data}: {data: IMice[]}) => {
     
     return (
         <div className="container mx-auto">
@@ -19,8 +20,8 @@ const AllMice = ({data}: {data: any}) => {
             </div>
             <div className="grid grid-cols-12 gap-[24px] pb-4">
                     {
-                        data?.map((item: any, index: number) => (
-                            <CityCard key={index} item={item} />
+                        data?.map((item, index) => (
+                            <MiceCard key={index} item={item} />
                         ))
                     }
             </div>

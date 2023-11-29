@@ -1,7 +1,8 @@
 import { FILE_URL } from "@/congif/constans";
+import { IHotel } from "@/models";
 import Image from "next/image";
 
-const HotelCard = ({item, isHover = true} : {item: any, isHover?: boolean}) => {
+const HotelCard = ({item, isHover = true} : {item: IHotel, isHover?: boolean}) => {
 
     const starSvg = <svg className="mr-[5px]" xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 8 9" fill="none">
             <path d="M2.72855 1.91312C3.12875 0.681435 4.87125 0.681435 5.27145 1.91312C5.45042 2.46394 5.96373 2.83688 6.5429 2.83688C7.83797 2.83688 8.37643 4.4941 7.3287 5.25532C6.86014 5.59575 6.66407 6.19917 6.84305 6.75C7.24325 7.98168 5.83353 9.0059 4.7858 8.24468C4.31724 7.90425 3.68276 7.90425 3.2142 8.24468C2.16647 9.0059 0.756754 7.98168 1.15695 6.75C1.33593 6.19917 1.13986 5.59575 0.671302 5.25532C-0.376431 4.4941 0.162032 2.83688 1.4571 2.83688C2.03627 2.83688 2.54958 2.46394 2.72855 1.91312Z" fill="#FFC01E"/>

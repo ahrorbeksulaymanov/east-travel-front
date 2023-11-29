@@ -3,11 +3,11 @@ import ToTopBtn from '@/components/Buttons/toTop'
 import AllTransports from '@/components/Transports'
 import TransportFirst from '@/components/Transports/firstBlock'
 import { BASE_URL } from '@/congif/constans'
-import { ITransportType } from '@/models'
+import { IBasic, ITransport, ITransportType } from '@/models'
 import { useState } from 'react'
 
 
-export async function getStaticProps({ params } : {params: any}) {
+export async function getStaticProps() {
 
   const transportTypeResponse = await fetch( `${BASE_URL}/transport-types` )
   const transportTypes = await transportTypeResponse.json()
@@ -24,11 +24,10 @@ export async function getStaticProps({ params } : {params: any}) {
 }
 
 
-export default function Transports ({transportTypes, transports}: {transportTypes: {message: string, status: number, data: ITransportType[]}, transports: any}) {
+export default function Transports ({transportTypes, transports}: {transportTypes: {message: string, status: number, data: ITransportType[]}, transports: IBasic<ITransport[]>}) {
   
   const [transportTypeId, settransportTypeId] = useState<number>()
 
-  console.log("transportTypes",transportTypes);
   console.log("transports", transports);
   
   return (
