@@ -15,8 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
       once: true,
       offset: 50,
     });
-  }, []);
-
+  }, []);  
 
   return (
     <div>

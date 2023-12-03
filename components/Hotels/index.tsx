@@ -1,30 +1,60 @@
 import HotelCard from "../Cards/Hotel";
-import { Select } from 'antd';
+import { Select, message } from 'antd';
 import { IHotel } from '@/models';
+import { useRouter } from "next/router";
+import instance from "@/congif/axios";
+import { useEffect, useState } from "react";
 
 const filterOption = (input: string, option?: { label: string; value: string }) => (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
 
 const AllHotels = ({data} : {data: IHotel[]}) => {
     
+    const router = useRouter();
+    const [regions, setRegions] = useState<any[]>()
 
-    // const getRegions = async () => {
-    //     try {
+    const getRegions = async () => {
+        try {
 
-    //         const response = await instance({ url: `/regions`, method: "GET" });
+            const response = await instance({ url: `/regions`, method: "GET" });
       
-    //         if (response.data?.status === 1) {
-    //             return response.data?.data
-    //         } else {
-    //             return new Error(response.data?.message)
-    //         }
-    //     } catch (error: any) {
-    //         message.error(error?.response?.message)
-    //     }
-    // }
+            if (response.data?.status === 1) {
+                return response.data?.data
+            } else {
+                return new Error(response.data?.message)
+            }
+        } catch (error: any) {
+            message.error(error?.response?.message)
+        }
+    }
     
-    // useEffect(() => {
-    //     getRegions()
-    // }, [])
+    useEffect(() => {
+        // router?.push(router.route)
+        getRegions().then(res => setRegions(res))
+    }, [])    
+    
+
+    const selectRegion = (e: number) => {
+        if(e) {
+            router.push({
+                query: { regionId: String(e) },
+            }, undefined, { scroll: false });
+        } else {
+            router.push({ query: {} }, undefined, { scroll: false });
+        }
+    }
+
+    const selectDistrict = (e: number) => {
+        if(e) {
+            router.push({
+                query: { ...router.query, districtId: String(e) },
+            }, undefined, { scroll: false });
+
+        } else {
+            router.push({
+                query: { regionId: router.query.regionId },
+            }, undefined, { scroll: false });
+        }
+    }
 
     return (
         <div className="container mx-auto mb-11">
@@ -34,37 +64,41 @@ const AllHotels = ({data} : {data: IHotel[]}) => {
                         Plan your perfect<span className="text-[#FFA500]"> hotels  </span>
                     </h1>
                 </div>
+
                 <div className="md:col-span-5 col-span-12">
-                <Select
-                    showSearch
-                    placeholder="Select a person"
-                    optionFilterProp="children"
-                    filterOption={filterOption}
-                    options={[
-                    {
-                        value: 'jack',
-                        label: 'Jack',
-                    },
-                    {
-                        value: 'lucy',
-                        label: 'Lucy',
-                    },
-                    {
-                        value: 'tom',
-                        label: 'Tom',
-                    },
-                    ]}
-                />
-                    <p className="text-[#000] lg:text-[18px] text-[16px] lg:leading-[40px] leading-[30px] font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mor mattis nec etiam ac. Bibendum tellus mi imperdiet amet maecenas magna tortor nulla. Nec tortor ut cursus ornare nibh vivamus. Quam elementum at velit viverra mattis.</p>
+                    <Select
+                        allowClear
+                        className="mr-3 w-[40%] h-[40px] font-bold"
+                        showSearch
+                        placeholder="Filter by region"
+                        value={router.query.regionId ? Number(router.query.regionId) : undefined}
+                        optionFilterProp="children"
+                        onChange={(e) => selectRegion(e)}
+                        filterOption={filterOption}
+                        options={regions?.map((r:any) => ({label: r?.name, value: r?.id}))}
+                    />
+                    <Select
+                        allowClear
+                        showSearch
+                        disabled={!router.query.regionId}
+                        className="w-[40%] h-[40px] font-bold"
+                        value={router.query.districtId ? Number(router.query.districtId) : undefined}
+                        placeholder="Filter by district"
+                        optionFilterProp="children"
+                        onChange={(e) => selectDistrict(e)}
+                        filterOption={filterOption}
+                        options={regions?.find(i => i?.id == router.query.regionId)?.districts?.map((r:any) => ({label: r?.name, value: r?.id}))}
+                    />
+                    <p className="text-[#000] lg:text-[18px] text-[16px] lg:leading-[40px] leading-[30px] font-bold mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mor mattis nec etiam ac. Bibendum tellus mi imperdiet amet maecenas magna tortor nulla. Nec tortor ut cursus ornare nibh vivamus. Quam elementum at velit viverra mattis.</p>
                 </div>
             </div>
             <div className="grid grid-cols-12 gap-[25px]">
-                    {                
-                        data?.map((item, index) => (
-                            <HotelCard key={index} item={item} />
-                        ))
-                    }
-                </div>
+                {                
+                    data?.map((item, index) => (
+                        <HotelCard key={index} item={item} />
+                    ))
+                }
+            </div>
         </div>
     )
 }

@@ -9,8 +9,9 @@ import 'swiper/css/navigation';
 // import required modules
 import { Navigation } from 'swiper/modules';
 import Image from 'next/image';
+import { FILE_URL } from '@/congif/constans';
 
-export default function CarsClider({data}: {data: {image: any, title: string}[]}) {
+export default function CarsClider({data, title}: {data: string[], title: string}) {
 
   return (
     <>
@@ -18,7 +19,7 @@ export default function CarsClider({data}: {data: {image: any, title: string}[]}
         {
             data?.map((i, index) => (
                 <SwiperSlide key={index}>
-                    <Image src={i?.image} className="w-[100%]" alt={i?.title} />
+                    <Image src={FILE_URL + i} width={400} height={400} className="w-[100%]" alt={title} />
                 </SwiperSlide>
             ))
         }

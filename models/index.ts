@@ -77,6 +77,7 @@ export interface ITransport{
     description: string;
     mainPhoto: string;
     transportType: ITransportType;
+    photos: string[]
 }
 
 export interface IDistrict{

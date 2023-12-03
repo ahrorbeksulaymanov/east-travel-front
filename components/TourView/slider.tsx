@@ -38,7 +38,7 @@ const TourViewSlider = ({data}: {data: ITour}) => {
         {
           images?.map((item, index) => (
             <SwiperSlide key={index}>
-                <Image src={FILE_URL + item} width={2000} height={2000} className='rounded w-[100%] h-[800px] object-cover' alt='aral-sea' />
+                <Image src={FILE_URL + item} width={2000} height={2000} className='rounded w-[100%] h-[800px] object-cover' alt={data?.title} />
             </SwiperSlide>
           ))
         }
@@ -56,7 +56,7 @@ const TourViewSlider = ({data}: {data: ITour}) => {
         {
           images?.map((item, index) => (
             <SwiperSlide key={index}>
-              <Image src={FILE_URL + item} width={1000} height={500} className='rounded w-[100%] h-[200px] object-cover'  alt='aral-sea' />
+              <Image src={FILE_URL + item} width={1000} height={500} className='rounded w-[100%] h-[200px] object-cover'  alt={data?.title} />
             </SwiperSlide>
           ))
         }

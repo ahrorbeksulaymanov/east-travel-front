@@ -6,13 +6,14 @@ import HotelsFirst from '@/components/Hotels/firstBlock'
 import { BASE_URL } from '@/congif/constans'
 import { IBasic, ICity, IHotel } from '@/models'
 
+export async function getServerSideProps (context: any) {
 
-export async function getStaticProps() {
+  const { districtId, regionId } = context.query;
 
   const citiesResponse = await fetch( `${BASE_URL}/cities` )
   const cities = await citiesResponse.json()
 
-  const hotelsResponse = await fetch(`${BASE_URL}/hotels`)
+  const hotelsResponse = await fetch(`${BASE_URL}/hotels${regionId ? "?regionId="+regionId : ""}${districtId ? "&districtId="+districtId : ""}`)
   const hotels = await hotelsResponse.json()
 
   return {
@@ -25,8 +26,6 @@ export async function getStaticProps() {
 
 export default function Hotels({cities, hotels}: {cities: IBasic<ICity[]>, hotels: IBasic<IHotel[]> }) {
   
-  console.log("hotels", hotels);
-
   return (
       <>
         <SEO />

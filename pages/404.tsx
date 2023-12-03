@@ -1,11 +1,11 @@
 import Link from "next/link";
 
-export default function AboutUs() {
+export default function PageNotFound() {
   
   return (
     <>
-      <Link href={'/'} className="absolute top-[50px] left-[100px] z-10">Orqaga</Link>
-      <iframe className="w-[100%] h-[100vh]" src="https://lottie.host/?file=785ffe19-8579-4ff5-8c6f-a52b2ca98348/j9WuMWVprp.json"></iframe>
+      <Link href={'/'} className="absolute top-[50px] left-[100px] z-10">To main page</Link>
+      <iframe className="w-[100%] h-[60vh]" src="https://lottie.host/embed/a6906bd9-27e3-48bc-9777-2ce75f332f02/BVDN1uxPQu.json"></iframe>
     </>
   )
 }
