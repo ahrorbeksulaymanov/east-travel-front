@@ -1,5 +1,6 @@
 import { ICity } from "@/models";
 import CityCard from "../Cards/City";
+import { Empty } from "antd";
 
 const AllCities = ({data}: {data: ICity[]}) => {
 
@@ -18,6 +19,7 @@ const AllCities = ({data}: {data: ICity[]}) => {
                     </div>
                 </div>
             </div>
+            {data?.length === 0 ? <Empty className="w-[100%] mx-auto" description={false} /> : ""}
             <div className="grid grid-cols-12 gap-[24px] pb-4">
                     {
                         data?.map((item: ICity, index: number) => (

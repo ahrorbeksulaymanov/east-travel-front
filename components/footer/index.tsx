@@ -104,7 +104,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <p className="md:mt-[86px] mt-[30px] text-center relative z-[3] text-[#000] font-medium">Developed by: <a target="_blank" className="text-[] underline" href="https://t.me/sulaymanov_a">ahror</a></p>
+                <p className="md:mt-[86px] mt-[30px] text-center relative z-[3] text-[#000] opacity-60 font-medium">Developed by: <a target="_blank" className="text-[] underline" href="https://t.me/sulaymanov_a">ahror</a></p>
             </div>
             <div className="footer-shadow absolute top-0 right-0 left-0 bottom-0 z-[2]"></div>
         </footer>

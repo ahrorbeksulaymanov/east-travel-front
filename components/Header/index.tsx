@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import useScrollTop from "@/custom-hooks/useOnscrollTopHeight";
 import Image from "next/image";
-import LightLogo from '../../assets/images/logo-light1.png';
+import LightLogo from '../../assets/images/logo-light.png';
 import DarkLogo from '../../assets/images/logo-dark.png';
 import Link from "next/link";
 import SidebarDrawer from "../Sidebar";

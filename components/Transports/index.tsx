@@ -1,6 +1,6 @@
 import Image from "next/image";
 import CarsClider from "./Slider";
-import { Segmented } from 'antd';
+import { Empty, Segmented } from 'antd';
 import { useEffect } from 'react';
 import { ITransport, ITransportType } from '@/models';
 import { FILE_URL } from '@/congif/constans';
@@ -49,7 +49,7 @@ const AllTransports = ({transports, transportTypes}: {transports: ITransport[], 
                     options={transportTypes?.map((item) => ({label: item?.name, value: item?.id}))}
                 />
             </div>
-            {transports?.length == 0 ? <iframe className="w-[300px] h-[300px] mx-auto" src="https://lottie.host/embed/4bb4d2eb-a8fb-489b-bb5a-a2ae6db1def8/jYwzFsIucN.json"></iframe> : ""}
+            {transports?.length === 0 ? <Empty className="w-[100%] mx-auto" description={false} /> : ""}
             {
                 transports?.map((item, index) => (
                     <div key={index}>

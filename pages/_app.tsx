@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <div>
-      <NextNProgress color="#FFB800" startPosition={0.3} stopDelayMs={100} height={2} showOnShallow={true} />
+      {/* <NextNProgress color="#FFB800" startPosition={0.3} stopDelayMs={100} height={2} showOnShallow={true} /> */}
       <Layout>
         <Component {...pageProps} />
       </Layout>

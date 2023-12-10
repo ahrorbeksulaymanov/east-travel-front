@@ -9,6 +9,7 @@ import { Autoplay } from 'swiper/modules';
 import CityCard from '@/components/Cards/City';
 import useWindowSize from '@/custom-hooks/useWindowSize';
 import { ICity } from '@/models';
+import { Empty } from 'antd';
 
 export default function PopularCitiesSlider({data} : {data: ICity[]}) {
   
@@ -35,7 +36,7 @@ export default function PopularCitiesSlider({data} : {data: ICity[]}) {
           </div>
 
         </div>
-
+        {data?.length === 0 ? <Empty className="w-[100%] mx-auto" description={false} /> : ""}
         <Swiper
           onSwiper={(swiper) => { 
             swiperRef.current = swiper;

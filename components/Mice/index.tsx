@@ -1,5 +1,6 @@
 import { IMice } from "@/models";
 import MiceCard from "../Cards/Mice";
+import { Empty } from "antd";
 
 const AllMice = ({data}: {data: IMice[]}) => {
     
@@ -18,6 +19,7 @@ const AllMice = ({data}: {data: IMice[]}) => {
                     </div>
                 </div>
             </div>
+            {data?.length === 0 ? <Empty className="w-[100%] mx-auto" description={false} /> : ""}
             <div className="grid grid-cols-12 gap-[24px] pb-4">
                     {
                         data?.map((item, index) => (

@@ -1,37 +1,13 @@
 import HotelCard from "../Cards/Hotel";
-import { Select, message } from 'antd';
-import { IHotel } from '@/models';
+import { Empty, Select } from 'antd';
+import { IHotel, IRegion } from '@/models';
 import { useRouter } from "next/router";
-import instance from "@/congif/axios";
-import { useEffect, useState } from "react";
 
 const filterOption = (input: string, option?: { label: string; value: string }) => (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
 
-const AllHotels = ({data} : {data: IHotel[]}) => {
+const AllHotels = ({data, regions} : {data: IHotel[], regions: IRegion[]}) => {
     
-    const router = useRouter();
-    const [regions, setRegions] = useState<any[]>()
-
-    const getRegions = async () => {
-        try {
-
-            const response = await instance({ url: `/regions`, method: "GET" });
-      
-            if (response.data?.status === 1) {
-                return response.data?.data
-            } else {
-                return new Error(response.data?.message)
-            }
-        } catch (error: any) {
-            message.error(error?.response?.message)
-        }
-    }
-    
-    useEffect(() => {
-        // router?.push(router.route)
-        getRegions().then(res => setRegions(res))
-    }, [])    
-    
+    const router = useRouter();    
 
     const selectRegion = (e: number) => {
         if(e) {
@@ -75,7 +51,7 @@ const AllHotels = ({data} : {data: IHotel[]}) => {
                         optionFilterProp="children"
                         onChange={(e) => selectRegion(e)}
                         filterOption={filterOption}
-                        options={regions?.map((r:any) => ({label: r?.name, value: r?.id}))}
+                        options={regions?.map((r: any) => ({label: r?.name, value: r?.id}))}
                     />
                     <Select
                         allowClear
@@ -87,11 +63,12 @@ const AllHotels = ({data} : {data: IHotel[]}) => {
                         optionFilterProp="children"
                         onChange={(e) => selectDistrict(e)}
                         filterOption={filterOption}
-                        options={regions?.find(i => i?.id == router.query.regionId)?.districts?.map((r:any) => ({label: r?.name, value: r?.id}))}
+                        options={regions?.find((i: any) => i?.id == router.query.regionId)?.districts?.map((r:any) => ({label: r?.name, value: r?.id}))}
                     />
                     <p className="text-[#000] lg:text-[18px] text-[16px] lg:leading-[40px] leading-[30px] font-bold mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mor mattis nec etiam ac. Bibendum tellus mi imperdiet amet maecenas magna tortor nulla. Nec tortor ut cursus ornare nibh vivamus. Quam elementum at velit viverra mattis.</p>
                 </div>
             </div>
+            {data?.length === 0 ? <Empty className="w-[100%] mx-auto" description={false} /> : ""}
             <div className="grid grid-cols-12 gap-[25px]">
                 {                
                     data?.map((item, index) => (

@@ -1,5 +1,6 @@
 import { ITour } from "@/models";
 import TourCards from "./tour-cards";
+import { Empty } from "antd";
 
 const AllTours = ({data} : {data: ITour[]}) => {
     
@@ -15,6 +16,7 @@ const AllTours = ({data} : {data: ITour[]}) => {
                     <p className="text-[#000] lg:text-[18px] text-[16px] lg:leading-[40px] leading-[30px] font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mor mattis nec etiam ac. Bibendum tellus mi imperdiet amet maecenas magna tortor nulla. Nec tortor ut cursus ornare nibh vivamus. Quam elementum at velit viverra mattis.</p>
                 </div>
             </div>
+            {data?.length === 0 ? <Empty className="w-[100%] mx-auto" description={false} /> : ""}
             <TourCards data={data} />
         </div>
     )

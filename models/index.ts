@@ -109,3 +109,12 @@ export interface IMice{
     photo: string;
     title: string;
 }
+
+export interface IRegion {
+    id: number;
+    name: string;
+    districts: Array<{
+        id: number;
+        name: string
+    }>
+}
