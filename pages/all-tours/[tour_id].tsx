@@ -7,7 +7,7 @@ import TourViewSlider from "@/components/TourView/slider";
 import TourTab from "@/components/TourView/tabs";
 import { BASE_URL } from "@/congif/constans";
 import { ITour } from "@/models";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export async function getStaticProps(context: any) {
 
@@ -34,6 +34,10 @@ export default function TourView(params: {data: ITour, message: string, status: 
 
   const [selectedDate, setselectedDate] = useState<string>()
     
+  useEffect(() => {
+    localStorage.removeItem("phone_is_checked")
+  }, [])
+
   return (
     <>
       <SEO />

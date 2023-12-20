@@ -53,7 +53,8 @@ const CheckCode = () => {
     
             if(result?.data?.status === 1) {
                 router.push(`/payment/${result?.data?.data?.bookingId}/${result?.data?.data?.price}`)
-                localStorage.removeItem("booking_result")
+                localStorage.removeItem("booking_result");
+                localStorage.setItem("phone_is_checked", '1')
             }
         } catch (error: any) {
             message.error(error?.response?.data?.message)
