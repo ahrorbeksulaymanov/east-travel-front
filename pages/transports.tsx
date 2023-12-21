@@ -4,7 +4,6 @@ import AllTransports from '@/components/Transports'
 import TransportFirst from '@/components/Transports/firstBlock'
 import { BASE_URL } from '@/congif/constans'
 import { IBasic, ITransport, ITransportType } from '@/models'
-import { useState } from 'react'
 
 
 export async function getServerSideProps(context: any) {
@@ -27,8 +26,6 @@ export async function getServerSideProps(context: any) {
 
 
 export default function Transports ({transportTypes, transports}: {transportTypes: {message: string, status: number, data: ITransportType[]}, transports: IBasic<ITransport[]>}) {
-  
-  console.log("transports", transports);
   
   return (
       <>

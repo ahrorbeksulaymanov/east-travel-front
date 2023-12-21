@@ -18,9 +18,7 @@ export async function getStaticProps() {
 }
 
 export default function Mice ({mice}: {mice: IBasic<IMice[]>}) {
-
-  console.log("mice", mice);
-
+  
   return (
       <>
         <SEO />

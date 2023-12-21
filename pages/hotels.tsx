@@ -30,9 +30,7 @@ export async function getServerSideProps (context: any) {
 }
 
 export default function Hotels({cities, hotels, regions}: {cities: IBasic<ICity[]>, hotels: IBasic<IHotel[]>, regions: {status: number, message: string, data: IRegion[]} }) {
-  
-  console.log("regions", regions);
-  
+    
   return (
       <>
         <SEO />

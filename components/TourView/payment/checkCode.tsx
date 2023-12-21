@@ -80,7 +80,7 @@ const CheckCode = () => {
         
         <div className="lg:col-span-7 col-span-12 text-center">
             <h4 className='text-[26px] font-semibold'>We have sent you an SMS code</h4>
-            <p className='mt-3 mb-7 text-[15px]'>Sms code</p>
+            <p className='mt-3 mb-7 text-[15px]'>SMS code</p>
             <div className="verification_code_wrapper flex justify-center">
                 <ReactInputVerificationCode
                     autoFocus
