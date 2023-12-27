@@ -3,10 +3,12 @@ import { Modal } from 'antd';
 import { Dispatch, useState } from 'react';
 import PaymentModalForm from './modalForm';
 import CheckCode from './checkCode';
+import BookedTour from './bookedTour';
 
 const PaymentModal =  ({isModalOpen, setIsModalOpen, data, peopleCount, selectedDate}: {isModalOpen: boolean, setIsModalOpen: Dispatch<boolean>, data: any, peopleCount:{[name: number]: number}, selectedDate: string | undefined}) => {
         
-    const [isSentCode, setisSentCode] = useState<boolean>(false);
+    const [isSentCode, setisSentCode] = useState<1 | 2 | 3>(1);
+    const [isNumberChecked, setisNumberChecked] = useState<boolean>(false);
 
     const calcAllSumm = () => {
         return data?.prices.reduce(function(accumulator: number, currentValue: any) {
@@ -27,9 +29,10 @@ const PaymentModal =  ({isModalOpen, setIsModalOpen, data, peopleCount, selected
         >
             <div className="grid grid-cols-12 text-[#4B465C] my-16 payment-step font-public-sans gap-6">
                 {
-                    isSentCode ? 
-                    <CheckCode />
-                    : <PaymentModalForm setIsModalOpen={setIsModalOpen} peopleCount={peopleCount} data={data} setisSentCode={setisSentCode} />
+                    isSentCode === 1 ? 
+                    <PaymentModalForm setIsModalOpen={setIsModalOpen} peopleCount={peopleCount} data={data} setisSentCode={setisSentCode} />
+                    : isSentCode === 2 ? <CheckCode setisSentCode={setisSentCode} />
+                        : isSentCode === 3 ?<BookedTour setisSentCode={setisSentCode} data={data} /> : ""
                 }
                 <div className="lg:col-span-5 col-span-12 my-auto">
                     <div className="p-[24px] pb-[14px] rounded-md" style={{border: "1px solid #DDE2E5"}}>
@@ -42,10 +45,10 @@ const PaymentModal =  ({isModalOpen, setIsModalOpen, data, peopleCount, selected
                                 </div>
                             ))
                         }
-                        <div className="flex justify-between mb-5">
+                        {/* <div className="flex justify-between mb-5">
                             <span className="font-normal">Date</span>
                             <span className="font-normal opacity-60">{selectedDate ? selectedDate : "Date is not selected"}</span>
-                        </div>
+                        </div> */}
                         <div className="flex justify-between mb-5 mt-10">
                             <span className="font-normal">Total</span>
                             <span className="font-normal">${calcAllSumm()}</span>

@@ -3,7 +3,7 @@ import { message } from 'antd';
 import axios from 'axios';
 import { Dispatch } from 'react';
 
-const PaymentModalForm =  ({setIsModalOpen, data, peopleCount, setisSentCode}: {setIsModalOpen: Dispatch<boolean>, data: any, peopleCount:{[name: number]: number}, setisSentCode: Dispatch<boolean>}) => {
+const PaymentModalForm =  ({setIsModalOpen, data, peopleCount, setisSentCode}: {setIsModalOpen: Dispatch<boolean>, data: any, peopleCount:{[name: number]: number}, setisSentCode: Dispatch<1 | 2 | 3>}) => {
         
     const submitData = async (event: any) => {
         event.preventDefault();
@@ -24,7 +24,7 @@ const PaymentModalForm =  ({setIsModalOpen, data, peopleCount, setisSentCode}: {
             const result = await axios({url: `${BASE_URL}/booking`, method: "POST", data: formdata});
     
             if(result?.data?.status === 1) {
-                setisSentCode(true)
+                setisSentCode(2)
                 localStorage.setItem("booking_result", JSON.stringify(result?.data?.data))
             }
             

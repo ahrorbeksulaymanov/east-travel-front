@@ -2,11 +2,11 @@ import { BASE_URL } from '@/congif/constans';
 import { message } from 'antd';
 import axios from 'axios';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { Dispatch, useEffect, useState } from 'react';
 import ReactInputVerificationCode from 'react-input-verification-code';
 
 
-const CheckCode = () => {
+const CheckCode = ({setisSentCode}: {setisSentCode: Dispatch<1 | 2 | 3>}) => {
 
     const router = useRouter();
 
@@ -52,11 +52,13 @@ const CheckCode = () => {
             const result = await axios({url: `${BASE_URL}/payment/check-phone?bookingId=${resData?.bookingId}&code=${phone}`, method: "POST"});
     
             if(result?.data?.status === 1) {
-                router.push(`/payment/${result?.data?.data?.bookingId}/${result?.data?.data?.price}`)
+                setisSentCode(3)
+                // router.push(`/payment/${result?.data?.data?.bookingId}/${result?.data?.data?.price}`)
                 localStorage.removeItem("booking_result");
                 localStorage.setItem("phone_is_checked", '1')
             }
         } catch (error: any) {
+            setisSentCode(3)
             message.error(error?.response?.data?.message)
         }
         

@@ -44,7 +44,7 @@ export default function TourView(params: {data: ITour, message: string, status: 
       <TourViewFirst title={params?.data?.title} />
       <TourViewSlider data={params?.data} />
       <TourTab data={params?.data} />
-      <TourCalendar data={params?.data} setselectedDate={setselectedDate} />
+      {/* <TourCalendar data={params?.data} setselectedDate={setselectedDate} /> */}
       <TourCalculator data={params?.data} selectedDate={selectedDate} />
       <ToTopBtn />
     </>

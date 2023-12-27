@@ -46,15 +46,15 @@ const TourCalculator = ({data, selectedDate}: {data: ITour, selectedDate:string 
                                 </div>
                             ))
                         }
-                        <div className="flex justify-between mb-5">
+                        {/* <div className="flex justify-between mb-5">
                             <span className="font-normal">Date</span>
                             <span className="font-normal opacity-60">{selectedDate ? selectedDate : "Select date"}</span>
-                        </div>
+                        </div> */}
                         <div className="flex justify-between mb-5 mt-10">
                             <span className="font-normal">Total</span>
                             <span className="font-normal">${calcAllSumm()}</span>
                         </div>
-                        <button onClick={() => calcAllSumm() ? setIsModalOpen(true) : message.warning("Select the number of passengers!")} className="bg-main-color hover:opacity-90 text-white py-2 w-[100%] rounded-md">Checkout</button>
+                        <button onClick={() => calcAllSumm() ? setIsModalOpen(true) : message.warning("Select the number of passengers!")} className="bg-main-color hover:opacity-90 text-white py-2 w-[100%] rounded-md">Booking</button>
                     </div>
                 </div>
             </div>
