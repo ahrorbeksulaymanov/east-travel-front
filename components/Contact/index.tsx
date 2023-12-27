@@ -36,8 +36,7 @@ const ContactForm = () => {
 
         if(response.data?.status == 1) {
             openNotification()
-        }
-        
+        }   
         return response.data;
     }
     
