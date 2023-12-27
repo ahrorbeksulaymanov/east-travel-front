@@ -39,7 +39,6 @@ const ContactForm = () => {
         }
         
         return response.data;
-
     }
     
     return (
