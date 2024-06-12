@@ -5,19 +5,7 @@ import MiceFirst from '@/components/Mice/firstBlock'
 import { BASE_URL } from '@/congif/constans'
 import { IBasic, IMice } from '@/models'
 
-export async function getStaticProps() {
-
-  const miceResponse = await fetch( `${BASE_URL}/mice` )
-  const mice = await miceResponse.json()
-
-  return {
-    props: {
-      mice,
-    },
-  }
-}
-
-export default function Mice ({mice}: {mice: IBasic<IMice[]>}) {
+export default function Mice({mice}: {mice: IBasic<IMice[]>}) {
   
   return (
       <>
@@ -27,4 +15,15 @@ export default function Mice ({mice}: {mice: IBasic<IMice[]>}) {
         <ToTopBtn />
       </>
   )
+}
+
+export async function getServerSideProps() {
+  const miceResponse = await fetch( `${BASE_URL}/mice` )
+  const mice = await miceResponse.json()
+
+  return {
+    props: {
+      mice,
+    },
+  }
 }

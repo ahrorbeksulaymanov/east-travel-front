@@ -6,17 +6,6 @@ import ToTopBtn from '@/components/Buttons/toTop'
 import { BASE_URL } from '@/congif/constans'
 import { IBasic, IEmployee } from '@/models'
 
-export async function getStaticProps() {
-  const response = await fetch(
-    `${BASE_URL}/users`
-  )
-  const users = await response.json()
-  return {
-    props: {
-      users
-    },
-  }
-}
 
 export default function AboutUs({users}: {users: IBasic<IEmployee[]>}) {
       
@@ -29,4 +18,16 @@ export default function AboutUs({users}: {users: IBasic<IEmployee[]>}) {
         <ToTopBtn />
       </>
   )
+}
+
+export async function getServerSideProps() {
+  const response = await fetch(
+    `${BASE_URL}/users`
+  )
+  const users = await response.json()
+  return {
+    props: {
+      users
+    },
+  }
 }

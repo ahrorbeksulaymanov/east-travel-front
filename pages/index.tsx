@@ -10,8 +10,25 @@ import PopularTours from '@/components/AllTours/popularTours'
 import { BASE_URL } from '@/congif/constans'
 import { IBasic, ICity, IGallery, IHotel, ITour } from '@/models'
 
-export async function getStaticProps() {
+export default function Home({cities, hotels, galleries, tours}: {cities: IBasic<ICity[]>, tours: IBasic<ITour[]>, hotels: IBasic<IHotel[]>, galleries: IBasic<IGallery[]> }) {    
 
+  return (
+      <>
+        <SEO />
+        <FirstBlock />
+        <PopularTours data={tours?.data?.items} />
+        <PopularHotels data={hotels?.data?.items} />
+        <PerfectCities data={cities?.data?.items} />
+        <AboutUsBlock />
+        <PhotoGallery data={galleries?.data?.items} />
+        <ContactUsBlock />
+        <ToTopBtn />
+      </>
+  )
+}
+
+
+export async function getServerSideProps() {
   const tourResponse = await fetch( `${BASE_URL}/tours?size=${6}&page=1` )
   const tours = await tourResponse.json()
 
@@ -30,24 +47,6 @@ export async function getStaticProps() {
       cities,
       hotels,
       galleries
-    },
-  }
-}
-
-
-export default function Home({tours, cities, hotels, galleries}: {cities: IBasic<ICity[]>, tours: IBasic<ITour[]>, hotels: IBasic<IHotel[]>, galleries: IBasic<IGallery[]> }) {    
-
-  return (
-      <>
-        <SEO />
-        <FirstBlock />
-        <PopularTours data={tours?.data?.items} />
-        <PopularHotels data={hotels?.data?.items} />
-        <PerfectCities data={cities?.data?.items} />
-        <AboutUsBlock />
-        <PhotoGallery data={galleries?.data?.items} />
-        <ContactUsBlock />
-        <ToTopBtn />
-      </>
-  )
+    }
+  };
 }

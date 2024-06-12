@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Instagram from '../../assets/images/instagram-icon.png'
 import DarkLogo from '../../assets/images/logo-dark.png';
+import Link from "next/link";
 
 const Footer = () => {
 
@@ -16,20 +17,20 @@ const Footer = () => {
                         <div className="grid gap-5 md:grid-cols-3 grid-cols-2">
                             <div>
                                 <h2 className="text-[21px] font-bold mb-[34px] text-[#080809]">Company</h2>
-                                <a href="#" className="mb-[12px] inline-block font-medium hover:underline text-[18px]">About</a><br />
-                                <a href="#" className="mb-[12px] inline-block font-medium hover:underline text-[18px]">Careers</a><br />
+                                <Link href="/about-us" className="mb-[12px] inline-block font-medium hover:underline text-[18px]">About</Link><br />
+                                <Link href="/contact" className="mb-[12px] inline-block font-medium hover:underline text-[18px]">Contact</Link><br />
                                 <a href="#" className="mb-[12px] inline-block font-medium hover:underline text-[18px]">Mobile</a><br />
                             </div>
                             <div>
                                 <h2 className="text-[21px] font-bold mb-[34px] text-[#080809]">Contact</h2>
-                                <a href="#" className="mb-[12px] inline-block font-medium hover:underline text-[18px]">Help/FAQ</a><br />
-                                <a href="#" className="mb-[12px] inline-block font-medium hover:underline text-[18px]">Press</a><br />
-                                <a href="#" className="mb-[12px] inline-block font-medium hover:underline text-[18px]">Affilates</a><br />
+                                <Link href="/all-tours" className="mb-[12px] inline-block font-medium hover:underline text-[18px]">All tours</Link><br />
+                                <Link href="/hotels" className="mb-[12px] inline-block font-medium hover:underline text-[18px]">Hotels</Link><br />
+                                <Link href="/cities" className="mb-[12px] inline-block font-medium hover:underline text-[18px]">Cities</Link><br />
                             </div>
                             <div className="md:block hidden">
                                 <h2 className="text-[21px] font-bold mb-[34px] text-[#080809]">More</h2>
-                                <a href="#" className="mb-[12px] inline-block font-medium hover:underline text-[18px]">Airlinefees</a><br />
-                                <a href="#" className="mb-[12px] inline-block font-medium hover:underline text-[18px]">Airline</a><br />
+                                <Link href="/mice" className="mb-[12px] inline-block font-medium hover:underline text-[18px]">MICE</Link><br />
+                                <Link href="/transports" className="mb-[12px] inline-block font-medium hover:underline text-[18px]">Transport</Link><br />
                                 <a href="#" className="mb-[12px] inline-block font-medium hover:underline text-[18px]">Low fare tips</a><br />
                             </div>
                         </div>
@@ -100,7 +101,7 @@ const Footer = () => {
                                     </clipPath>
                                 </defs>
                             </svg>
-                            <a href="mailto:info@easttour.com" className="text-[18px] inline-block font-medium hover:underline">info@easttour.com</a><br />
+                            <a href="mailto:info@easttour.uz" className="text-[18px] inline-block font-medium hover:underline">info@easttour.uz</a><br />
                         </div>
                     </div>
                 </div>

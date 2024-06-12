@@ -12,20 +12,20 @@ const SEO = () => {
             <title>East tour</title>
             <link rel="icon" href="./logo-light.png" />
             <meta name='title' content={'East tour'} />
-            <meta name="description" content={'East tour travel agency!'} />
-            <meta name="keywords" content={'East tour, tour, East, uzbekistan tour, travel, travels, tours'} />
+            <meta name="description" content={'East tour travel agency! travel to Uzbekistan, Tashkent, Samarkand, Bukhara, Zamin'} />
+            <meta name="keywords" content={'East tour, tour, East, uzbekistan tour, travel, travels, tours, Uzbekistan, Tashkent, Samarkand, Bukhara, Zamin'} />
 
             <meta name="og:type" content={'website'} />
             <meta name="og:url" content={'http://easttour.uz/'} />
             <meta name="og:title" content={"East tour"} />
-            <meta name="og:description" content={'East tour travel agency!'} />
+            <meta name="og:description" content={'East tour travel agency! travel to Uzbekistan, Tashkent, Samarkand, Bukhara, Zamin'} />
             <meta name="og:image" content={`image`} />
             <meta name="og:site_name" content={'East tour'} />
 
             <meta property="twitter:card" content="summary_large_image" />
             <meta property="twitter:url" content="http://easttour.uz/" />
             <meta property="twitter:title" content="East tour" />
-            <meta property="twitter:description" content='"East tour travel agency!' />
+            <meta property="twitter:description" content='"East tour travel agency! travel to Uzbekistan, Tashkent, Samarkand, Bukhara, Zamin' />
             <meta property="twitter:image" content="https://easttour.uz/media/cwhttgutvn20_44_02_14_12.png" />        
         </Head>
     )

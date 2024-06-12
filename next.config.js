@@ -16,8 +16,9 @@ const nextConfig = {
         pathname: '/api/file/**',
       },
     ],
+    unoptimized: true
   },
-  output: "export"
+  // output: "export"
 
 }
 

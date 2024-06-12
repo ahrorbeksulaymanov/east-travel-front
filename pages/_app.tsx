@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 import Layout from '@/components/Layouts';
 import NextNProgress from 'nextjs-progressbar';
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {    
 
   useEffect(() => {
     AOS.init({

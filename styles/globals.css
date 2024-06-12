@@ -24,6 +24,12 @@ html {
   font-family: 'Montserrat', sans-serif;
   /* overflow-x: hidden; */
 }
+
+code{
+  max-width: 100% !important;
+  word-break: break-all !important;
+}
+
 .first-block{
   background: url(../assets/images/main-bg.png);
   background-size: cover;

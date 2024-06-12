@@ -16,7 +16,7 @@ const TourTab = ({data}: {data: ITour}) => {
                 data?.itineraries?.map((item) => (
                     <div key={item?.id}>
                         <p className='text-base font-bold mt-6'>{item?.day}</p>
-                        <p className='font-noto text-lg leading-[40px] mt-3' dangerouslySetInnerHTML={{__html: item?.description}} />
+                        <p className='font-noto text-lg leading-[40px] mt-3 break-all' dangerouslySetInnerHTML={{__html: item?.description}} />
                     </div>
                 ))
                 

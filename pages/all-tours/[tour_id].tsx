@@ -9,8 +9,7 @@ import { BASE_URL } from "@/congif/constans";
 import { ITour } from "@/models";
 import { useEffect, useState } from "react";
 
-export async function getStaticProps(context: any) {
-
+  export async function getServerSideProps(context: any) {
     const response = await fetch(
       `${BASE_URL}/tours/get-one?slug=${context.params.tour_id}`
     )
@@ -20,15 +19,15 @@ export async function getStaticProps(context: any) {
     }
   }
 
-  export async function getStaticPaths() {
-    const res = await fetch(`${BASE_URL}/tours`)
-    const posts = await res.json()
-    const paths = posts?.data?.items?.map((i: ITour) => ({ params: { tour_id: `${i?.slug}` } }))
-    return {
-      paths, 
-      fallback: true,
-    }
-  }
+  // export async function getStaticPaths() {
+  //   const res = await fetch(`${BASE_URL}/tours`)
+  //   const posts = await res.json()
+  //   const paths = posts?.data?.items?.map((i: ITour) => ({ params: { tour_id: `${i?.slug}` } }))
+  //   return {
+  //     paths, 
+  //     fallback: true,
+  //   }
+  // }
 
 export default function TourView(params: {data: ITour, message: string, status: number}) {  
 
