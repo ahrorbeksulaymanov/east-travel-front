@@ -1,14 +1,10 @@
 import { BASE_URL } from '@/congif/constans';
-import { message } from 'antd';
+import { Input, message } from 'antd';
 import axios from 'axios';
-import { useRouter } from 'next/router';
 import { Dispatch, useEffect, useState } from 'react';
 import ReactInputVerificationCode from 'react-input-verification-code';
 
-
 const CheckCode = ({setisSentCode}: {setisSentCode: Dispatch<1 | 2 | 3>}) => {
-
-    const router = useRouter();
 
     const [phone, setPhone] = useState<string>()
     const [isFull, setisFull] = useState<boolean>(false)
@@ -53,7 +49,6 @@ const CheckCode = ({setisSentCode}: {setisSentCode: Dispatch<1 | 2 | 3>}) => {
     
             if(result?.data?.status === 1) {
                 setisSentCode(3)
-                // router.push(`/payment/${result?.data?.data?.bookingId}/${result?.data?.data?.price}`)
                 localStorage.removeItem("booking_result");
                 localStorage.setItem("phone_is_checked", '1')
             }

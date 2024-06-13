@@ -17,7 +17,6 @@ export default function Cities ({cities} : {cities: IBasic<ICity[]>}) {
   )
 }
 
-
 export async function getServerSideProps() {
   const response = await fetch(
     `${BASE_URL}/cities`

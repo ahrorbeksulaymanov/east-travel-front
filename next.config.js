@@ -15,11 +15,15 @@ const nextConfig = {
         port: '8888',
         pathname: '/api/file/**',
       },
+      {
+        protocol: 'http',
+        hostname: '178.157.91.194',
+        pathname: '/api/file/**',
+      },
     ],
     unoptimized: true
   },
   // output: "export"
-
 }
 
 module.exports = nextConfig

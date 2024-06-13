@@ -7,6 +7,8 @@ import PerfectCities from '@/components/Cities/perfectCities'
 import PhotoGallery from '@/components/photoGallery'
 import PopularHotels from '@/components/Hotels/popularHotels'
 import PopularTours from '@/components/AllTours/popularTours'
+
+
 import { BASE_URL } from '@/congif/constans'
 import { IBasic, ICity, IGallery, IHotel, ITour } from '@/models'
 

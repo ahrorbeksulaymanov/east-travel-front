@@ -1,17 +1,8 @@
-import { BASE_URL } from '@/congif/constans';
-import { message } from 'antd';
-import axios from 'axios';
-import { useRouter } from 'next/router';
-import { Dispatch, useEffect, useState } from 'react';
-import ReactInputVerificationCode from 'react-input-verification-code';
+import { Dispatch } from 'react';
 
 
 const BookedTour = ({setisSentCode, data}: {setisSentCode: Dispatch<1 | 2 | 3>, data: any}) => {
 
-    const router = useRouter();
-
-    const [counter, setcounter] = useState<number>(59)
-    console.log("dddddddddddd", data);
     
     return(
         

@@ -1,6 +1,6 @@
 import { ITour } from '@/models';
 import { Calendar } from 'antd';
-import dayjs from 'dayjs'
+import dayjs from 'dayjs';
 import { Dispatch } from 'react';
 
 const TourCalendar = ({data, setselectedDate}: {data: ITour, setselectedDate: Dispatch<string>}) => {
