@@ -29,7 +29,10 @@ export default function Transports ({transportTypes, transports}: {transportType
   
   return (
       <>
-        <SEO />
+        <SEO
+          title='Transports'
+          description='Our vehicles are always ready for your service with East Tour'
+        />
         <TransportFirst />
         <AllTransports transportTypes={transportTypes?.data} transports={transports?.data?.items} />
         <ToTopBtn />

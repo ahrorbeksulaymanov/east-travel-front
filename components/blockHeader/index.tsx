@@ -11,7 +11,7 @@ const BlockHeader = ({btlUrl, title, tag, desc, btnTitle, tagMobile}: {btlUrl?: 
                 {tag}
                 <div className="flex justify-between items-center">
                     <p className="font-normal text-[#697687] w-[40%] mt-[10px] mb-[15px]">{desc}</p>
-                    {btlUrl ? <button onClick={() => router.push(btlUrl)} className="text-[18px] px-[20px] py-[16px] bg-main-color rounded-[4px] text-white border-none block-header-btn" >{btnTitle}</button> : ""}
+                    {btlUrl ? <button onClick={() => router.push(btlUrl)} className="text-[18px] px-[20px] py-[16px] bg-main-color rounded-[4px] text-white border-none block-header-btn" aria-label={`${btnTitle} button`}>{btnTitle}</button> : ""}
                 </div>
             </div>
             <div className="md:hidden block">

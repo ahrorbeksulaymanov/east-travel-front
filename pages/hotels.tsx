@@ -33,7 +33,10 @@ export default function Hotels({cities, hotels, regions}: {cities: IBasic<ICity[
     
   return (
       <>
-        <SEO />
+        <SEO
+          title='Hotels'
+          description='Plan your perfect hotels in Uzbekistan'
+        />
         <HotelsFirst />
         <AllHotels data={hotels?.data?.items} regions={regions?.data} />
         <PopularCitiesSlider data={cities?.data?.items} />

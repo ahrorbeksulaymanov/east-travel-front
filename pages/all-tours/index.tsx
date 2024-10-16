@@ -10,7 +10,10 @@ export default function Tours({tours, cities}: {tours: IBasic<ITour[]>, cities: 
   
   return (
       <>
-        <SEO />
+        <SEO
+          title='Tours on Uzbekistan'
+          description='Popular Tours on Uzbekistan with East Tour'
+        />
         <AllToursFirst />
         <AllTours data={tours?.data?.items} />
         <PopularCitiesSlider data={cities?.data?.items} />

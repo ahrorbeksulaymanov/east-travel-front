@@ -8,8 +8,6 @@ import PhotoGallery from '@/components/photoGallery'
 import PopularHotels from '@/components/Hotels/popularHotels'
 import PopularTours from '@/components/AllTours/popularTours'
 
-
-import { BASE_URL } from '@/congif/constans'
 import { IBasic, ICity, IGallery, IHotel, ITour } from '@/models'
 
 export default function Home({cities, hotels, galleries, tours}: {cities: IBasic<ICity[]>, tours: IBasic<ITour[]>, hotels: IBasic<IHotel[]>, galleries: IBasic<IGallery[]> }) {    
@@ -31,24 +29,27 @@ export default function Home({cities, hotels, galleries, tours}: {cities: IBasic
 
 
 export async function getServerSideProps() {
-  const tourResponse = await fetch( `${BASE_URL}/tours?size=${6}&page=1` )
-  const tours = await tourResponse.json()
 
-  const citiesResponse = await fetch( `${BASE_URL}/cities?size=${6}&page=1` )
-  const cities = await citiesResponse.json()
+  // const tourResponse = await fetch( `${BASE_URL}/tours?size=${6}&page=1` )
+  // const tours = await tourResponse.json()
 
-  const hotelsResponse = await fetch(`${BASE_URL}/hotels?size=${3}&page=1`)
-  const hotels = await hotelsResponse.json()
+  // const citiesResponse = await fetch( `${BASE_URL}/cities?size=${6}&page=1` )
+  // const cities = await citiesResponse.json()
 
-  const galleriesResponse = await fetch(`${BASE_URL}/galleries`)
-  const galleries = await galleriesResponse.json()
+  // console.log("fffffffffffffffffffff",cities)
+
+  // const hotelsResponse = await fetch(`${BASE_URL}/hotels?size=${3}&page=1`)
+  // const hotels = await hotelsResponse.json()
+
+  // const galleriesResponse = await fetch(`${BASE_URL}/galleries`)
+  // const galleries = await galleriesResponse.json()
 
   return {
     props: {
-      tours,
-      cities,
-      hotels,
-      galleries
+      tours: [],
+      cities: [],
+      hotels: [],
+      galleries: []
     }
   };
 }

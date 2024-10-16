@@ -9,7 +9,10 @@ export default function Mice({mice}: {mice: IBasic<IMice[]>}) {
   
   return (
       <>
-        <SEO />
+        <SEO
+          title='Mice'
+          description='The best amenities for the holidays with East Tour'
+        />
         <MiceFirst />
         <AllMice data={mice?.data?.items} />
         <ToTopBtn />

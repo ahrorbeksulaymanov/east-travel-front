@@ -9,7 +9,10 @@ export default function Cities ({cities} : {cities: IBasic<ICity[]>}) {
     
   return (
       <>
-        <SEO />
+        <SEO
+          title='Cities'
+          description='Plan your perfect Cities in Uzbekistan'
+        />
         <CitiesFirst />
         <AllCities data={cities?.data?.items} />
         <ToTopBtn />

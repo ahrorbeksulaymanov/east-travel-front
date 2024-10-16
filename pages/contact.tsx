@@ -7,7 +7,10 @@ export default function Contact () {
   
   return (
       <>
-        <SEO />
+        <SEO
+          title='Contact us'
+          description='Hey, We are the EastTour Brief History About Us.'
+        />
         <ContactFirst />
         <ContactForm />
         <ToTopBtn />

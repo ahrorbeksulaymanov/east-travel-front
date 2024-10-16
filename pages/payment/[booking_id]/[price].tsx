@@ -17,7 +17,10 @@ export default function PaymentPage() {
 
     return (
         <>
-            <SEO />
+            <SEO
+                title='Payment'
+                description='Payment for Tours on Uzbekistan with East Tour'
+            />
             <PaymentComponent />
             <ToTopBtn />
         </>

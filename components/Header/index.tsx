@@ -20,19 +20,24 @@ const HeaderClient = () => {
         new window.google.translate.TranslateElement({
             pageLanguage: 'en',
             includedLanguages : "en,fr,de,es,ru,zh-CN", // include this for selected languages
-            // @ts-ignore
-            // layout: google.translate.TranslateElement.InlineLayout.SIMPLE
         },
         'google_translate_element');
     }
 
     useEffect(() => {
         if(typeof window !== undefined){
-            var addScript = document.createElement('script');
+            let addScript = document.createElement('script');
             addScript.setAttribute('src', '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit');
+            addScript.async = true;
+            addScript.defer = true;
             document.body.appendChild(addScript);
             // @ts-ignore
             window.googleTranslateElementInit = googleTranslateElementInit;
+
+            return () => {
+                document.body.removeChild(addScript); // Cleanup
+            };
+
         }
     }, [typeof window])
 
@@ -47,7 +52,14 @@ const HeaderClient = () => {
             <div className="container mx-auto">
                 <header className="flex justify-start items-start">
                     <Link href="/">
-                        <Image className="xl:w-[150px] md:w-[120px] w-[100px] my-[15px]" src={scrollHeight > 150 ? DarkLogo : LightLogo} alt="Logo" />
+                        <Image 
+                            className="xl:w-[150px] md:w-[120px] w-[100px] my-[15px] flex-shrink-0" 
+                            src={scrollHeight > 150 ? DarkLogo : LightLogo} 
+                            alt={scrollHeight > 150 ? "DarkLogo" : "LightLogo"} 
+                            priority 
+                            width={150}
+                            height={120}
+                        />
                     </Link>
                     <div className="lg:flex hidden items-center md:text-[16px] text-[14px] xl:ml-[100px] ml-[50px]">
                         <Link href="/" className={`${router.pathname == "/" ? "active-link" : ""} xl:mr-[48px] lg:mr-[30px] md:mr-[15px] pt-[30px] relative`}  >Home</Link>

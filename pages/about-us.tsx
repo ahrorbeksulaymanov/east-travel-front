@@ -11,7 +11,10 @@ export default function AboutUs({users}: {users: IBasic<IEmployee[]>}) {
       
   return (
       <>
-        <SEO />
+        <SEO
+          title='About East Tour'
+          description='Hey, We are the EastTour Brief History About East Tour.'
+        />
         <AboutUsFirst />
         <AboutC />
         <EmployeesSlider data={users?.data?.items} />

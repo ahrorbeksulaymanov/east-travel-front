@@ -5,7 +5,7 @@ import TourCalendar from "@/components/TourView/calendar";
 import TourViewFirst from "@/components/TourView/firstBlock";
 import TourViewSlider from "@/components/TourView/slider";
 import TourTab from "@/components/TourView/tabs";
-import { BASE_URL } from "@/congif/constans";
+import { BASE_URL, FILE_URL } from "@/congif/constans";
 import { ITour } from "@/models";
 import { useEffect, useState } from "react";
 
@@ -39,7 +39,11 @@ export default function TourView(params: {data: ITour, message: string, status: 
 
   return (
     <>
-      <SEO />
+      <SEO
+        title={params?.data?.title}
+        description={params?.data?.description}
+        image={FILE_URL + params?.data?.mainPhoto}
+      />
       <TourViewFirst title={params?.data?.title} />
       <TourViewSlider data={params?.data} />
       <TourTab data={params?.data} />
