@@ -1,3 +1,4 @@
+import SEO from '@/SEO'
 import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
@@ -19,7 +20,7 @@ export default function Document() {
         
         {/* AOS animation css */}
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
+        <SEO />
       </Head>
 
       <body>

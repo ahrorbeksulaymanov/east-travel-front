@@ -9,7 +9,7 @@ const AboutC = () => {
                 <div className="grid grid-cols-12 xl:gap-[110px] lg:gap-[50px] md:gap-[40px] ">
                     <div className="md:col-span-6 col-span-12 bg-dotted pl-5">
                         <h1 className="text-second-color lg:text-[40px] md:text-[35px] sm:text-[30px] text-[25px] font-normal font-noto">
-                        Hey, We are the EastTour Brief History <span className="text-[#FFA500] underline underline-offset-4"> About Us. </span>
+                        East Tour is a DMC based in <span className="text-[#FFA500] underline underline-offset-4"> Tashkent, Uzbekistan</span>
                         </h1>
                     </div>
                     <div className="md:col-span-6 col-span-12">
